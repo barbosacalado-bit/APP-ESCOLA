@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Colaborador | Colégio Dom Hélder (Gestão de Conteúdo e Asaas)</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome & Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            navy: '#0b1d3a',
+                            royal: '#1a56db',
+                            sky: '#0284c7',
+                            gold: '#f59e0b',
+                            amber: '#d97706',
+                            emerald: '#10b981'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-100 font-sans text-slate-800 antialiased min-h-screen flex flex-col selection:bg-brand-royal selection:text-white">
+
+    <!-- BARRA SUPERIOR DO ADMIN -->
+    <header class="bg-brand-navy text-white border-b border-white/10 px-4 sm:px-8 py-3.5 sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-brand-royal text-white flex items-center justify-center font-extrabold shadow-md">
+                    CDH
+                </div>
+                <div>
+                    <div class="flex items-center gap-2">
+                        <span class="font-heading font-extrabold text-base text-white">Painel da Secretaria & Coordenação</span>
+                        <span class="bg-amber-400 text-brand-navy text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Versão 1.0</span>
+                    </div>
+                    <span class="text-[11px] text-slate-400 block">Colégio Dom Hélder • Afogados da Ingazeira</span>
+                </div>
+            </div>
+            
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="flex items-center gap-1.5 bg-white/10 hover:bg-white/20 text-white text-xs font-semibold px-3.5 py-2 rounded-xl transition">
+                    <i class="fa-solid fa-eye text-amber-300"></i> Ver Site ao Vivo
+                </a>
+                <div class="hidden sm:flex items-center gap-2 border-l border-white/15 pl-3">
+                    <div class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-xs font-bold text-white">
+                        SC
+                    </div>
+                    <span class="text-xs font-medium text-slate-300">Secretaria CDH</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto w-full px-4 sm:px-8 py-8 flex-1">
+        
+        <!-- RESUMO EM CARDS (METRICS / KPI) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
+            <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center text-xl">
+                    <i class="fa-brands fa-pix"></i>
+                </div>
+                <div>
+                    <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block">Matrículas Asaas</span>
+                    <span id="metric-enrollments-count" class="font-heading font-extrabold text-2xl text-brand-navy">3</span>
+                    <span class="text-[10px] text-emerald-600 font-bold block mt-0.5">● Todas Confirmadas</span>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-brand-royal flex items-center justify-center text-xl">
+                    <i class="fa-solid fa-money-bill-wave"></i>
+                </div>
+                <div>
+                    <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block">Faturamento Reservas</span>
+                    <span id="metric-enrollments-total" class="font-heading font-extrabold text-2xl text-brand-navy">R$ 1.050,00</span>
+                    <span class="text-[10px] text-slate-500 font-medium block mt-0.5">Direto na Conta Asaas</span>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-brand-gold flex items-center justify-center text-xl">
+                    <i class="fa-solid fa-newspaper"></i>
+                </div>
+                <div>
+                    <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block">Matérias Publicadas</span>
+                    <span id="metric-news-count" class="font-heading font-extrabold text-2xl text-brand-navy">4</span>
+                    <span class="text-[10px] text-slate-500 font-medium block mt-0.5">Visíveis na Home</span>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-600 flex items-center justify-center text-xl">
+                    <i class="fa-solid fa-bell"></i>
+                </div>
+                <div>
+                    <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block">Notificações Push</span>
+                    <span class="font-heading font-extrabold text-2xl text-brand-navy">100% Ativo</span>
+                    <span class="text-[10px] text-purple-600 font-bold block mt-0.5">Alerta Imediato aos Pais</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- NAVEGAÇÃO POR ABAS -->
+        <div class="flex border-b border-slate-200 mb-6 gap-3 overflow-x-auto">
+            <button onclick="switchTab('new-post')" id="tab-btn-new-post" class="py-3 px-4 font-bold text-sm border-b-2 border-brand-royal text-brand-royal flex items-center gap-2 transition whitespace-nowrap">
+                <i class="fa-solid fa-pen-to-square"></i> Publicar Nova Matéria
+            </button>
+            <button onclick="switchTab('manage-posts')" id="tab-btn-manage-posts" class="py-3 px-4 font-semibold text-sm border-b-2 border-transparent text-slate-500 hover:text-slate-800 flex items-center gap-2 transition whitespace-nowrap">
+                <i class="fa-solid fa-list-check"></i> Gerenciar Matérias
+            </button>
+            <button onclick="switchTab('enrollments')" id="tab-btn-enrollments" class="py-3 px-4 font-semibold text-sm border-b-2 border-transparent text-slate-500 hover:text-slate-800 flex items-center gap-2 transition whitespace-nowrap">
+                <i class="fa-solid fa-graduation-cap"></i> Matrículas Recebidas (Asaas)
+                <span id="tab-badge-enrollments" class="bg-emerald-100 text-emerald-700 text-[10px] font-extrabold px-2 py-0.5 rounded-full">3</span>
+            </button>
+        </div>
+
+        <!-- ABA 1: FORMULÁRIO DE PUBLICAÇÃO DE MATÉRIA (CMS FÁCIL) -->
+        <div id="tab-new-post" class="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200/80 shadow-sm space-y-6">
+            <div class="border-b border-slate-100 pb-4">
+                <h3 class="font-heading font-extrabold text-xl text-brand-navy">Criar e Publicar Nova Matéria / Comunicado</h3>
+                <p class="text-xs text-slate-500">O conteúdo publicado aqui aparece automaticamente no feed da Página Inicial e no aplicativo dos pais com formatação de cinema.</p>
+            </div>
+
+            <form id="post-news-form" onsubmit="handlePublishNews(event)" class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                    
+                    <div class="md:col-span-2 space-y-1.5">
+                        <label class="text-xs font-bold text-slate-700">Título da Matéria *</label>
+                        <input type="text" id="post-title" required placeholder="Ex: Alunos do 7º ano conquistam medalhas na OBA 2026" 
+                               class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-royal">
+                    </div>
+
+                    <div class="space-y-1.5">
+                        <label class="text-xs font-bold text-slate-700">Categoria / Seção *</label>
+                        <select id="post-category" required class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-royal bg-white">
+                            <option value="Esportes">🏆 Esportes & JEPS</option>
+                            <option value="Educação Infantil">🧸 Educação Infantil</option>
+                            <option value="Tecnologia & Robótica">🤖 Tecnologia & Robótica</option>
+                            <option value="Ciências & Astronomia">🪐 Ciências & Astronomia</option>
+                            <option value="Eventos & Cultura">🎭 Eventos & Cultura</option>
+                            <option value="Comunicado Geral">📢 Comunicado Oficial</option>
+                        </select>
+                    </div>
+
+                    <div class="md:col-span-3 space-y-1.5">
+                        <label class="text-xs font-bold text-slate-700">Resumo Curto (Aparece no card da capa) *</label>
+                        <input type="text" id="post-summary" required placeholder="Ex: Uma breve frase resumindo a notícia para despertar a curiosidade dos pais..." 
+                               class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-royal">
+                    </div>
+
+                    <div class="md:col-span-3 space-y-1.5">
+                        <label class="text-xs font-bold text-slate-700">Imagem de Capa em Alta Resolução *</label>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <input type="url" id="post-image-url" required placeholder="Cole o link da foto ou selecione uma foto pronta abaixo" 
+                                   value="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=1200&q=80"
+                                   class="flex-1 px-4 py-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-brand-royal font-mono">
+                            <div class="flex gap-2">
+                                <button type="button" onclick="selectPresetImage(1)" class="bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs px-3 py-2 rounded-xl transition font-semibold">
+                                    📷 Esportes
+                                </button>
+                                <button type="button" onclick="selectPresetImage(2)" class="bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs px-3 py-2 rounded-xl transition font-semibold">
+                                    🔬 Ciência
+                                </button>
+                                <button type="button" onclick="selectPresetImage(3)" class="bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs px-3 py-2 rounded-xl transition font-semibold">
+                                    🎨 Infantil
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="md:col-span-3 space-y-1.5">
+                        <label class="text-xs font-bold text-slate-700">Texto Completo da Matéria *</label>
+                        <textarea id="post-content" rows="5" required placeholder="Escreva aqui todos os detalhes da notícia, agradecimentos, horários ou informações para a comunidade escolar..."
+                                  class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-royal leading-relaxed"></textarea>
+                    </div>
+
+                </div>
+
+                <div class="flex flex-col sm:flex-row justify-between items-center gap-4 pt-4 border-t border-slate-100">
+                    <span class="text-xs text-slate-400">
+                        <i class="fa-solid fa-circle-info text-brand-royal mr-1"></i> Publicação instantânea sem necessidade de reiniciar servidor.
+                    </span>
+                    <button type="submit" class="w-full sm:w-auto bg-brand-royal hover:bg-blue-700 text-white font-bold text-sm px-8 py-3.5 rounded-xl shadow-md transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-paper-plane"></i> Publicar Matéria no Site & App
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- ABA 2: GERENCIAMENTO DE MATÉRIAS PUBLICADAS -->
+        <div id="tab-manage-posts" class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-sm space-y-6 hidden">
+            <div class="flex justify-between items-center border-b border-slate-100 pb-4">
+                <div>
+                    <h3 class="font-heading font-extrabold text-xl text-brand-navy">Matérias Publicadas no Sistema</h3>
+                    <p class="text-xs text-slate-500">Lista completa das postagens ativas no feed do Colégio.</p>
+                </div>
+                <button onclick="switchTab('new-post')" class="bg-brand-royal text-white text-xs font-bold px-4 py-2 rounded-xl">
+                    + Nova Matéria
+                </button>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-xs">
+                    <thead>
+                        <tr class="border-b border-slate-200 text-slate-400 uppercase font-bold text-[10px]">
+                            <th class="py-3 px-2">Capa</th>
+                            <th class="py-3 px-4">Título da Matéria</th>
+                            <th class="py-3 px-4">Categoria</th>
+                            <th class="py-3 px-4">Data</th>
+                            <th class="py-3 px-4 text-center">Visualizações</th>
+                            <th class="py-3 px-4 text-right">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-news-table-body" class="divide-y divide-slate-100 font-medium">
+                        <!-- Preenchido via JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ABA 3: MATRÍCULAS RECEBIDAS (INTEGRAÇÃO ASAAS) -->
+        <div id="tab-enrollments" class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-sm space-y-6 hidden">
+            <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-4 border-b border-slate-100 pb-4">
+                <div>
+                    <h3 class="font-heading font-extrabold text-xl text-brand-navy">Matrículas & Reservas Recebidas</h3>
+                    <p class="text-xs text-slate-500">Transações e pré-matrículas processadas pelo gateway financeiro Asaas.</p>
+                </div>
+                <div class="flex items-center gap-2 bg-emerald-50 text-emerald-800 border border-emerald-200 px-3.5 py-1.5 rounded-xl text-xs font-bold">
+                    <i class="fa-solid fa-circle-check text-emerald-600"></i>
+                    <span>Webhook Asaas Conectado</span>
+                </div>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-xs">
+                    <thead>
+                        <tr class="border-b border-slate-200 text-slate-400 uppercase font-bold text-[10px]">
+                            <th class="py-3 px-4">Protocolo</th>
+                            <th class="py-3 px-4">Estudante</th>
+                            <th class="py-3 px-4">Série / Turno</th>
+                            <th class="py-3 px-4">Responsável & Contato</th>
+                            <th class="py-3 px-4">Forma de Pgto</th>
+                            <th class="py-3 px-4">Valor</th>
+                            <th class="py-3 px-4 text-center">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-enrollments-table-body" class="divide-y divide-slate-100 font-medium">
+                        <!-- Preenchido via JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- SCRIPT DE INTERAÇÃO DO ADMIN -->
+    <script src="js/store.js"></script>
+    <script>
+        function switchTab(tab) {
+            document.getElementById('tab-new-post').classList.add('hidden');
+            document.getElementById('tab-manage-posts').classList.add('hidden');
+            document.getElementById('tab-enrollments').classList.add('hidden');
+
+            document.getElementById('tab-btn-new-post').className = 'py-3 px-4 font-semibold text-sm border-b-2 border-transparent text-slate-500 hover:text-slate-800 flex items-center gap-2 transition whitespace-nowrap';
+            document.getElementById('tab-btn-manage-posts').className = 'py-3 px-4 font-semibold text-sm border-b-2 border-transparent text-slate-500 hover:text-slate-800 flex items-center gap-2 transition whitespace-nowrap';
+            document.getElementById('tab-btn-enrollments').className = 'py-3 px-4 font-semibold text-sm border-b-2 border-transparent text-slate-500 hover:text-slate-800 flex items-center gap-2 transition whitespace-nowrap';
+
+            if (tab === 'new-post') {
+                document.getElementById('tab-new-post').classList.remove('hidden');
+                document.getElementById('tab-btn-new-post').className = 'py-3 px-4 font-bold text-sm border-b-2 border-brand-royal text-brand-royal flex items-center gap-2 transition whitespace-nowrap';
+            } else if (tab === 'manage-posts') {
+                document.getElementById('tab-manage-posts').classList.remove('hidden');
+                document.getElementById('tab-btn-manage-posts').className = 'py-3 px-4 font-bold text-sm border-b-2 border-brand-royal text-brand-royal flex items-center gap-2 transition whitespace-nowrap';
+                renderAdminNews();
+            } else if (tab === 'enrollments') {
+                document.getElementById('tab-enrollments').classList.remove('hidden');
+                document.getElementById('tab-btn-enrollments').className = 'py-3 px-4 font-bold text-sm border-b-2 border-brand-royal text-brand-royal flex items-center gap-2 transition whitespace-nowrap';
+                renderAdminEnrollments();
+            }
+        }
+
+        // Presets de Imagens para facilitar
+        function selectPresetImage(num) {
+            const urls = [
+                'https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=1200&q=80', // Esportes
+                'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80', // Robótica
+                'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80'  // Infantil
+            ];
+            document.getElementById('post-image-url').value = urls[num - 1];
+        }
+
+        // Publicar Nova Matéria
+        function handlePublishNews(e) {
+            e.preventDefault();
+            const title = document.getElementById('post-title').value.trim();
+            const category = document.getElementById('post-category').value;
+            const summary = document.getElementById('post-summary').value.trim();
+            const image = document.getElementById('post-image-url').value.trim();
+            const content = document.getElementById('post-content').value.trim();
+
+            const colorMap = {
+                'Esportes': 'bg-emerald-500',
+                'Educação Infantil': 'bg-amber-500',
+                'Tecnologia & Robótica': 'bg-indigo-600',
+                'Ciências & Astronomia': 'bg-sky-600',
+                'Eventos & Cultura': 'bg-purple-600',
+                'Comunicado Geral': 'bg-rose-600'
+            };
+
+            SchoolStore.addNews({
+                title,
+                category,
+                categoryColor: colorMap[category] || 'bg-brand-royal',
+                summary,
+                image,
+                content,
+                author: 'Secretaria CDH'
+            });
+
+            alert('🎉 Matéria publicada com sucesso!\n\nEla já está disponível na página inicial e no aplicativo da escola.');
+            document.getElementById('post-news-form').reset();
+            updateMetrics();
+            switchTab('manage-posts');
+        }
+
+        // Renderizar Tabela de Matérias
+        function renderAdminNews() {
+            const list = SchoolStore.getNews();
+            const tbody = document.getElementById('admin-news-table-body');
+            
+            tbody.innerHTML = list.map(item => `
+                <tr class="hover:bg-slate-50 transition">
+                    <td class="py-3 px-2">
+                        <img src="${item.image}" class="w-12 h-9 rounded-lg object-cover">
+                    </td>
+                    <td class="py-3 px-4 font-bold text-brand-navy max-w-xs truncate">${item.title}</td>
+                    <td class="py-3 px-4">
+                        <span class="text-[10px] font-bold px-2 py-0.5 rounded text-white ${item.categoryColor || 'bg-brand-royal'}">
+                            ${item.category}
+                        </span>
+                    </td>
+                    <td class="py-3 px-4 text-slate-500">${item.date}</td>
+                    <td class="py-3 px-4 text-center text-slate-600 font-semibold">${item.views || 1}</td>
+                    <td class="py-3 px-4 text-right">
+                        <button onclick="handleDeleteNews('${item.id}')" class="text-rose-500 hover:text-rose-700 font-bold px-2 py-1 rounded transition">
+                            <i class="fa-solid fa-trash-can"></i> Excluir
+                        </button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        function handleDeleteNews(id) {
+            if (confirm('Tem certeza que deseja remover esta matéria do feed da escola?')) {
+                SchoolStore.deleteNews(id);
+                renderAdminNews();
+                updateMetrics();
+            }
+        }
+
+        // Renderizar Tabela de Matrículas Asaas
+        function renderAdminEnrollments() {
+            const list = SchoolStore.getEnrollments();
+            const tbody = document.getElementById('admin-enrollments-table-body');
+
+            tbody.innerHTML = list.map(item => `
+                <tr class="hover:bg-slate-50 transition">
+                    <td class="py-3 px-4 font-mono font-bold text-brand-royal">${item.id}</td>
+                    <td class="py-3 px-4 font-bold text-brand-navy">${item.studentName}</td>
+                    <td class="py-3 px-4 text-slate-600">${item.grade} (${item.shift})</td>
+                    <td class="py-3 px-4">
+                        <span class="font-semibold text-slate-800 block">${item.guardianName}</span>
+                        <span class="text-[10px] text-slate-500">${item.whatsapp}</span>
+                    </td>
+                    <td class="py-3 px-4 text-slate-700">${item.paymentMethod}</td>
+                    <td class="py-3 px-4 font-bold text-emerald-600">R$ ${item.amount.toFixed(2).replace('.', ',')}</td>
+                    <td class="py-3 px-4 text-center">
+                        <span class="bg-emerald-100 text-emerald-700 font-bold text-[10px] px-2.5 py-1 rounded-full inline-flex items-center gap-1">
+                            <i class="fa-solid fa-circle-check"></i> ${item.status}
+                        </span>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        // Atualizar Contadores
+        function updateMetrics() {
+            const news = SchoolStore.getNews();
+            const enrollments = SchoolStore.getEnrollments();
+
+            document.getElementById('metric-news-count').innerText = news.length;
+            document.getElementById('metric-enrollments-count').innerText = enrollments.length;
+            document.getElementById('tab-badge-enrollments').innerText = enrollments.length;
+
+            const total = enrollments.reduce((sum, item) => sum + (item.amount || 0), 0);
+            document.getElementById('metric-enrollments-total').innerText = 'R$ ' + total.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            updateMetrics();
+            renderAdminEnrollments();
+            renderAdminNews();
+        });
+    </script>
+</body>
+</html>
