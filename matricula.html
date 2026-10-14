@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faça sua Matrícula | Colégio Dom Hélder (Checkout Asaas)</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome & Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            navy: '#0b1d3a',
+                            royal: '#1a56db',
+                            sky: '#0284c7',
+                            gold: '#f59e0b',
+                            amber: '#d97706',
+                            emerald: '#10b981'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-100 font-sans text-slate-800 antialiased min-h-screen flex flex-col justify-between selection:bg-brand-royal selection:text-white">
+
+    <!-- CABEÇALHO DO CHECKOUT SEGURO -->
+    <header class="bg-brand-navy text-white border-b border-white/10 py-4 px-4 sm:px-8">
+        <div class="max-w-5xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-royal to-blue-600 flex items-center justify-center text-white font-extrabold text-lg shadow-md">
+                    CDH
+                </div>
+                <div>
+                    <span class="font-heading font-extrabold text-lg text-white block leading-tight">Colégio Dom Hélder</span>
+                    <span class="text-[10px] text-amber-300 font-semibold uppercase tracking-wider block">Matrículas & Reserva de Vaga</span>
+                </div>
+            </a>
+            <div class="flex items-center gap-2 text-xs text-slate-300 bg-white/10 px-3.5 py-1.5 rounded-full border border-white/15">
+                <i class="fa-solid fa-lock text-emerald-400"></i>
+                <span class="font-medium">Ambiente Seguro Asaas Gateway</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ÁREA PRINCIPAL DO CHECKOUT -->
+    <main class="max-w-5xl mx-auto w-full px-4 sm:px-8 py-10">
+        
+        <!-- BARRA DE PROGRESSO EM 3 ETAPAS -->
+        <div class="max-w-2xl mx-auto mb-10">
+            <div class="flex items-center justify-between relative">
+                <div class="absolute left-0 top-1/2 -translate-y-1/2 w-full h-1 bg-slate-200 z-0"></div>
+                <div id="progress-bar-fill" class="absolute left-0 top-1/2 -translate-y-1/2 w-0 h-1 bg-brand-royal z-0 transition-all duration-500"></div>
+
+                <!-- ETAPA 1 -->
+                <div class="step-indicator relative z-10 flex flex-col items-center" data-step="1">
+                    <div class="w-10 h-10 rounded-full bg-brand-royal text-white font-bold flex items-center justify-center text-sm shadow-md transition">
+                        1
+                    </div>
+                    <span class="text-[11px] font-bold text-brand-navy mt-1.5">Dados do Aluno</span>
+                </div>
+
+                <!-- ETAPA 2 -->
+                <div class="step-indicator relative z-10 flex flex-col items-center" data-step="2">
+                    <div class="w-10 h-10 rounded-full bg-slate-200 text-slate-600 font-bold flex items-center justify-center text-sm transition">
+                        2
+                    </div>
+                    <span class="text-[11px] font-semibold text-slate-500 mt-1.5">Responsável</span>
+                </div>
+
+                <!-- ETAPA 3 -->
+                <div class="step-indicator relative z-10 flex flex-col items-center" data-step="3">
+                    <div class="w-10 h-10 rounded-full bg-slate-200 text-slate-600 font-bold flex items-center justify-center text-sm transition">
+                        3
+                    </div>
+                    <span class="text-[11px] font-semibold text-slate-500 mt-1.5">Pagamento Asaas</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- FORMULÁRIO MULTI-STEP -->
+        <div class="bg-white rounded-3xl shadow-xl border border-slate-200/80 overflow-hidden">
+            <form id="enrollment-form" onsubmit="event.preventDefault();">
+
+                <!-- ETAPA 1: DADOS DO ALUNO -->
+                <div id="step-1" class="p-6 sm:p-10 space-y-6">
+                    <div class="border-b border-slate-100 pb-4">
+                        <span class="text-xs font-bold uppercase tracking-wider text-brand-royal">Passo 1 de 3</span>
+                        <h2 class="font-heading font-extrabold text-2xl text-brand-navy mt-1">Identificação do Estudante</h2>
+                        <p class="text-xs text-slate-500">Informe os dados básicos da criança para seleção da turma correspondente.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div class="sm:col-span-2 space-y-1.5">
+                            <label class="text-xs font-bold text-slate-700">Nome Completo do Aluno *</label>
+                            <input type="text" id="student-name" required placeholder="Ex: Arthur Emanuel da Silva" 
+                                   class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-royal">
+                        </div>
+
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-bold text-slate-700">Data de Nascimento *</label>
+                            <input type="date" id="student-dob" required 
+                                   class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-royal">
+                        </div>
+
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-bold text-slate-700">Segmento / Série Desejada *</label>
+                            <select id="student-grade" required class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-royal bg-white">
+                                <option value="">Selecione a série...</option>
+                                <optgroup label="Educação Infantil (2 a 5 Anos)">
+                                    <option value="Maternal I (2 anos) - Ed. Infantil">Maternal I (2 anos)</option>
+                                    <option value="Maternal II (3 anos) - Ed. Infantil">Maternal II (3 anos)</option>
+                                    <option value="Pré I (4 anos) - Ed. Infantil">Pré I (4 anos)</option>
+                                    <option value="Pré II (5 anos) - Ed. Infantil">Pré II (5 anos)</option>
+                                </optgroup>
+                                <optgroup label="Ensino Fundamental I (Anos Iniciais)">
+                                    <option value="1º Ano - Fundamental I" selected>1º Ano - Fundamental I</option>
+                                    <option value="2º Ano - Fundamental I">2º Ano - Fundamental I</option>
+                                    <option value="3º Ano - Fundamental I">3º Ano - Fundamental I</option>
+                                    <option value="4º Ano - Fundamental I">4º Ano - Fundamental I</option>
+                                    <option value="5º Ano - Fundamental I">5º Ano - Fundamental I</option>
+                                </optgroup>
+                                <optgroup label="Ensino Fundamental II (Anos Finais)">
+                                    <option value="6º Ano - Fundamental II">6º Ano - Fundamental II</option>
+                                    <option value="7º Ano - Fundamental II">7º Ano - Fundamental II</option>
+                                    <option value="8º Ano - Fundamental II">8º Ano - Fundamental II</option>
+                                    <option value="9º Ano - Fundamental II">9º Ano - Fundamental II</option>
+                                </optgroup>
+                            </select>
+                        </div>
+
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-bold text-slate-700">Turno de Preferência *</label>
+                            <div class="grid grid-cols-2 gap-3">
+                                <label class="border border-slate-200 p-3 rounded-xl flex items-center gap-2 cursor-pointer hover:border-brand-royal has-[:checked]:border-brand-royal has-[:checked]:bg-blue-50/50">
+                                    <input type="radio" name="shift" value="Manhã" checked class="text-brand-royal">
+                                    <span class="text-xs font-semibold text-slate-700">Manhã (07:30 - 11:50)</span>
+                                </label>
+                                <label class="border border-slate-200 p-3 rounded-xl flex items-center gap-2 cursor-pointer hover:border-brand-royal has-[:checked]:border-brand-royal has-[:checked]:bg-blue-50/50">
+                                    <input type="radio" name="shift" value="Tarde" class="text-brand-royal">
+                                    <span class="text-xs font-semibold text-slate-700">Tarde (13:15 - 17:35)</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-bold text-slate-700">Oficinas de Interesse (Opcional)</label>
+                            <div class="flex flex-wrap gap-2 text-xs">
+                                <label class="bg-slate-100 hover:bg-slate-200 px-3 py-1.5 rounded-lg cursor-pointer font-medium has-[:checked]:bg-brand-royal has-[:checked]:text-white transition">
+                                    <input type="checkbox" class="hidden" value="Robótica"> 🤖 Robótica Maker
+                                </label>
+                                <label class="bg-slate-100 hover:bg-slate-200 px-3 py-1.5 rounded-lg cursor-pointer font-medium has-[:checked]:bg-brand-royal has-[:checked]:text-white transition">
+                                    <input type="checkbox" class="hidden" value="Natação"> 🏊 Natação & Esportes
+                                </label>
+                                <label class="bg-slate-100 hover:bg-slate-200 px-3 py-1.5 rounded-lg cursor-pointer font-medium has-[:checked]:bg-brand-royal has-[:checked]:text-white transition">
+                                    <input type="checkbox" class="hidden" value="Bilíngue"> 🇺🇸 Prática Bilíngue
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-end pt-4">
+                        <button type="button" onclick="goToStep(2)" class="bg-brand-royal hover:bg-blue-700 text-white font-bold text-sm px-8 py-3.5 rounded-xl shadow-md transition flex items-center gap-2">
+                            Avançar para Responsável <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ETAPA 2: DADOS DO RESPONSÁVEL FINANCEIRO -->
+                <div id="step-2" class="p-6 sm:p-10 space-y-6 hidden">
+                    <div class="border-b border-slate-100 pb-4">
+                        <span class="text-xs font-bold uppercase tracking-wider text-brand-royal">Passo 2 de 3</span>
+                        <h2 class="font-heading font-extrabold text-2xl text-brand-navy mt-1">Dados do Responsável Financeiro</h2>
+                        <p class="text-xs text-slate-500">Necessário para emissão do contrato, recibo oficial e registro no gateway Asaas.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div class="sm:col-span-2 space-y-1.5">
+                            <label class="text-xs font-bold text-slate-700">Nome do Pai, Mãe ou Responsável Legal *</label>
+                            <input type="text" id="guardian-name" required placeholder="Ex: Roberto Carlos da Silva" 
+                                   class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-royal">
+                        </div>
+
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-bold text-slate-700">CPF do Responsável (Exigido pelo Asaas) *</label>
+                            <input type="text" id="guardian-cpf" required placeholder="000.000.000-00" maxlength="14"
+                                   oninput="maskCPF(this)"
+                                   class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-royal">
+                        </div>
+
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-bold text-slate-700">WhatsApp para Confirmação *</label>
+                            <input type="tel" id="guardian-phone" required placeholder="(87) 99999-0000" maxlength="15"
+                                   oninput="maskPhone(this)"
+                                   class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-royal">
+                        </div>
+
+                        <div class="sm:col-span-2 space-y-1.5">
+                            <label class="text-xs font-bold text-slate-700">E-mail para Recebimento do Recibo *</label>
+                            <input type="email" id="guardian-email" required placeholder="seuemail@exemplo.com" 
+                                   class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-royal">
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between items-center pt-4">
+                        <button type="button" onclick="goToStep(1)" class="text-slate-500 hover:text-slate-800 text-sm font-semibold flex items-center gap-2">
+                            <i class="fa-solid fa-arrow-left"></i> Voltar
+                        </button>
+                        <button type="button" onclick="goToStep(3)" class="bg-brand-royal hover:bg-blue-700 text-white font-bold text-sm px-8 py-3.5 rounded-xl shadow-md transition flex items-center gap-2">
+                            Ir para Pagamento Asaas <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ETAPA 3: PAGAMENTO ASAAS (PIX / BOLETO / CARTÃO) -->
+                <div id="step-3" class="p-6 sm:p-10 space-y-8 hidden">
+                    <div class="border-b border-slate-100 pb-4 flex flex-col sm:flex-row justify-between sm:items-center gap-4">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-wider text-emerald-600">Passo 3 de 3 - Conclusão</span>
+                            <h2 class="font-heading font-extrabold text-2xl text-brand-navy mt-1">Reserva de Vaga & Taxa de Matrícula</h2>
+                        </div>
+                        <!-- LOGO ASAAS CERTIFIED -->
+                        <div class="flex items-center gap-2 bg-emerald-50 border border-emerald-200 text-emerald-800 px-3 py-1.5 rounded-xl text-xs font-bold">
+                            <i class="fa-solid fa-shield-halved text-emerald-600"></i>
+                            <span>Processamento via Asaas</span>
+                        </div>
+                    </div>
+
+                    <!-- CARD DE RESUMO FINANCEIRO -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+                        <div>
+                            <span class="text-xs font-bold text-slate-500 uppercase">Resumo da Reserva:</span>
+                            <h4 id="summary-student" class="font-heading font-bold text-lg text-brand-navy">Gabriel Siqueira Rocha</h4>
+                            <p id="summary-grade" class="text-xs text-slate-600">1º Ano - Fundamental I (Manhã)</p>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-xs text-slate-500 block line-through">De R$ 350,00</span>
+                            <span class="font-heading font-extrabold text-3xl text-emerald-600">R$ 300,00</span>
+                            <span class="text-[10px] text-emerald-700 font-bold block">Taxa Promocional de Reserva</span>
+                        </div>
+                    </div>
+
+                    <!-- SELETOR DE FORMA DE PAGAMENTO ASAAS -->
+                    <div class="space-y-4">
+                        <label class="text-xs font-bold text-slate-700 uppercase tracking-wider block">Escolha a Forma de Pagamento:</label>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <!-- OPÇÃO PIX (RECOMENDADA) -->
+                            <label class="border-2 border-emerald-500 bg-emerald-50/30 rounded-2xl p-4 flex flex-col justify-between cursor-pointer relative shadow-sm">
+                                <input type="radio" name="paymentMethod" value="PIX (Asaas)" checked onchange="togglePaymentTab('pix')" class="absolute top-4 right-4 text-emerald-600">
+                                <div class="space-y-2">
+                                    <div class="w-10 h-10 rounded-xl bg-emerald-500 text-white flex items-center justify-center text-lg">
+                                        <i class="fa-brands fa-pix"></i>
+                                    </div>
+                                    <span class="font-bold text-sm text-slate-900 block">PIX Instantâneo</span>
+                                    <p class="text-[11px] text-slate-500">Confirmação imediata no sistema. Libera o comprovante na hora.</p>
+                                </div>
+                                <span class="mt-3 text-[10px] font-extrabold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded w-max">Mais Rápido</span>
+                            </label>
+
+                            <!-- OPÇÃO CARTÃO DE CRÉDITO -->
+                            <label class="border-2 border-slate-200 hover:border-brand-royal rounded-2xl p-4 flex flex-col justify-between cursor-pointer relative">
+                                <input type="radio" name="paymentMethod" value="Cartão de Crédito (Asaas)" onchange="togglePaymentTab('card')" class="absolute top-4 right-4 text-brand-royal">
+                                <div class="space-y-2">
+                                    <div class="w-10 h-10 rounded-xl bg-blue-100 text-brand-royal flex items-center justify-center text-lg">
+                                        <i class="fa-solid fa-credit-card"></i>
+                                    </div>
+                                    <span class="font-bold text-sm text-slate-900 block">Cartão de Crédito</span>
+                                    <p class="text-[11px] text-slate-500">Parcele a matrícula em até 12x no cartão com total segurança.</p>
+                                </div>
+                                <span class="mt-3 text-[10px] font-semibold text-slate-500">Até 12x</span>
+                            </label>
+
+                            <!-- OPÇÃO BOLETO BANCÁRIO -->
+                            <label class="border-2 border-slate-200 hover:border-brand-royal rounded-2xl p-4 flex flex-col justify-between cursor-pointer relative">
+                                <input type="radio" name="paymentMethod" value="Boleto Bancário (Asaas)" onchange="togglePaymentTab('boleto')" class="absolute top-4 right-4 text-brand-royal">
+                                <div class="space-y-2">
+                                    <div class="w-10 h-10 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center text-lg">
+                                        <i class="fa-solid fa-barcode"></i>
+                                    </div>
+                                    <span class="font-bold text-sm text-slate-900 block">Boleto Bancário</span>
+                                    <p class="text-[11px] text-slate-500">Vencimento em 3 dias úteis. Registrado pelo Asaas.</p>
+                                </div>
+                                <span class="mt-3 text-[10px] font-semibold text-slate-500">Compensação em 24h</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- ÁREA ESPECÍFICA DO PIX (PADRÃO ASAAS INTERATIVO) -->
+                    <div id="payment-pix-box" class="bg-white border-2 border-dashed border-emerald-400 rounded-3xl p-6 sm:p-8 text-center space-y-6">
+                        <div class="inline-flex items-center gap-2 text-xs font-bold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full">
+                            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                            QR Code Pix Gerado via Asaas API
+                        </div>
+
+                        <!-- QR CODE VISUAL -->
+                        <div class="flex justify-center">
+                            <div class="p-4 bg-white rounded-2xl border-2 border-slate-200 shadow-md">
+                                <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=00020101021226830014br.gov.bcb.pix2561asaas.com/qr/v2/pay_981249812039481209384719283749812739481209345204000053039865802BR5925COLEGIO DOM HELDER LTDA6018AFOGADOS DA INGAZE62070503***6304E8A2" 
+                                     alt="QR Code Pix Asaas" 
+                                     class="w-44 h-44 object-contain">
+                            </div>
+                        </div>
+
+                        <!-- COPIA E COLA -->
+                        <div class="max-w-md mx-auto space-y-2">
+                            <label class="text-xs font-bold text-slate-600 block">Código Pix Copia e Cola:</label>
+                            <div class="flex gap-2">
+                                <input type="text" id="pix-code" readonly value="00020101021226830014br.gov.bcb.pix2561asaas.com/qr/v2/pay_981249812039481209384719283749812739481209345204000053039865802BR5925COLEGIO DOM HELDER LTDA6018AFOGADOS DA INGAZE62070503***6304E8A2"
+                                       class="w-full px-3 py-2 bg-slate-100 border border-slate-300 rounded-xl text-xs font-mono text-slate-600 truncate focus:outline-none">
+                                <button type="button" onclick="copyPixCode()" class="bg-brand-navy hover:bg-slate-800 text-white text-xs font-bold px-4 py-2 rounded-xl transition shrink-0 flex items-center gap-1.5">
+                                    <i class="fa-regular fa-copy"></i> Copiar
+                                </button>
+                            </div>
+                            <span id="copy-feedback" class="text-[11px] text-emerald-600 font-bold hidden">Chave Pix copiada com sucesso! Cole no app do seu banco.</span>
+                        </div>
+
+                        <!-- BOTÃO DE SIMULAÇÃO DE PAGAMENTO EM TEMPO REAL -->
+                        <div class="pt-4 border-t border-slate-100 max-w-sm mx-auto">
+                            <button type="button" onclick="simulatePaymentSuccess()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-sm py-4 rounded-xl shadow-lg shadow-emerald-600/25 transition flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-circle-check"></i>
+                                Simular Confirmação do Pix Asaas
+                            </button>
+                            <p class="text-[10px] text-slate-400 mt-2">No ambiente de produção, o Asaas avisa via Webhook e aprova automaticamente em segundos.</p>
+                        </div>
+                    </div>
+
+                    <!-- ÁREA CARTÃO DE CRÉDITO -->
+                    <div id="payment-card-box" class="bg-slate-50 border border-slate-200 rounded-3xl p-6 sm:p-8 space-y-4 hidden">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="sm:col-span-2 space-y-1">
+                                <label class="text-xs font-bold text-slate-700">Número do Cartão</label>
+                                <input type="text" placeholder="0000 0000 0000 0000" class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm">
+                            </div>
+                            <div class="space-y-1">
+                                <label class="text-xs font-bold text-slate-700">Validade (MM/AA)</label>
+                                <input type="text" placeholder="12/28" class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm">
+                            </div>
+                            <div class="space-y-1">
+                                <label class="text-xs font-bold text-slate-700">CVV</label>
+                                <input type="text" placeholder="123" class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm">
+                            </div>
+                            <div class="sm:col-span-2 space-y-1">
+                                <label class="text-xs font-bold text-slate-700">Parcelamento</label>
+                                <select class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm bg-white">
+                                    <option>1x de R$ 300,00 sem juros</option>
+                                    <option>2x de R$ 150,00 sem juros</option>
+                                    <option>3x de R$ 100,00 sem juros</option>
+                                    <option>6x de R$ 52,50 com taxa</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="button" onclick="simulatePaymentSuccess('Cartão de Crédito 3x (Asaas)')" class="w-full bg-brand-royal hover:bg-blue-700 text-white font-bold py-4 rounded-xl transition text-sm">
+                            Confirmar Pagamento com Cartão (Asaas)
+                        </button>
+                    </div>
+
+                    <!-- ÁREA BOLETO -->
+                    <div id="payment-boleto-box" class="bg-slate-50 border border-slate-200 rounded-3xl p-6 sm:p-8 text-center space-y-4 hidden">
+                        <i class="fa-solid fa-barcode text-5xl text-slate-600"></i>
+                        <h4 class="font-bold text-base text-brand-navy">Boleto Bancário Registrado Asaas</h4>
+                        <p class="text-xs text-slate-500 max-w-md mx-auto">O boleto com código de barras será gerado com vencimento para 3 dias úteis. Você receberá o PDF também no WhatsApp informado.</p>
+                        <button type="button" onclick="simulatePaymentSuccess('Boleto Bancário (Asaas)')" class="bg-slate-800 hover:bg-slate-900 text-white font-bold px-8 py-3.5 rounded-xl transition text-sm">
+                            Gerar Boleto Oficial Asaas
+                        </button>
+                    </div>
+
+                    <div class="flex justify-between items-center pt-2">
+                        <button type="button" onclick="goToStep(2)" class="text-slate-500 hover:text-slate-800 text-sm font-semibold flex items-center gap-2">
+                            <i class="fa-solid fa-arrow-left"></i> Voltar aos Dados
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ETAPA 4: CONFIRMAÇÃO DE SUCESSO -->
+                <div id="step-success" class="p-8 sm:p-14 text-center space-y-6 hidden">
+                    <div class="w-20 h-20 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-4xl mx-auto shadow-inner animate-bounce">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+
+                    <div class="space-y-2">
+                        <span class="text-xs font-bold uppercase tracking-widest text-emerald-600">Pagamento Confirmado pelo Asaas!</span>
+                        <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-brand-navy">
+                            Pré-Matrícula Realizada com Sucesso!
+                        </h2>
+                        <p class="text-slate-600 text-sm max-w-lg mx-auto">
+                            A vaga do aluno está <strong>garantida</strong> no Colégio Dom Hélder para o ano letivo de 2026/2027.
+                        </p>
+                    </div>
+
+                    <!-- CARD DO COMPROVANTE -->
+                    <div class="max-w-md mx-auto bg-slate-50 border border-slate-200 rounded-2xl p-6 text-left space-y-3 text-xs shadow-sm">
+                        <div class="flex justify-between border-b border-slate-200 pb-2">
+                            <span class="text-slate-500">Protocolo da Matrícula:</span>
+                            <span id="receipt-id" class="font-mono font-bold text-brand-navy">MAT-2026-090</span>
+                        </div>
+                        <div class="flex justify-between border-b border-slate-200 pb-2">
+                            <span class="text-slate-500">Aluno(a):</span>
+                            <span id="receipt-student" class="font-bold text-brand-navy">Arthur Emanuel da Silva</span>
+                        </div>
+                        <div class="flex justify-between border-b border-slate-200 pb-2">
+                            <span class="text-slate-500">Série e Turno:</span>
+                            <span id="receipt-grade" class="font-semibold text-slate-700">1º Ano - Fundamental I (Manhã)</span>
+                        </div>
+                        <div class="flex justify-between border-b border-slate-200 pb-2">
+                            <span class="text-slate-500">Responsável:</span>
+                            <span id="receipt-guardian" class="font-semibold text-slate-700">Roberto Carlos</span>
+                        </div>
+                        <div class="flex justify-between border-b border-slate-200 pb-2">
+                            <span class="text-slate-500">Gateway:</span>
+                            <span class="font-bold text-emerald-600 flex items-center gap-1">
+                                <i class="fa-solid fa-circle-check"></i> Asaas (Aprovado Instantâneo)
+                            </span>
+                        </div>
+                        <div class="flex justify-between pt-1 text-sm font-bold">
+                            <span>Valor Pago:</span>
+                            <span class="text-emerald-600">R$ 300,00</span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                        <a href="portal.html" class="w-full sm:w-auto bg-brand-royal hover:bg-blue-700 text-white font-bold text-sm px-6 py-3.5 rounded-xl shadow-md transition">
+                            <i class="fa-solid fa-user-graduate mr-1.5"></i> Acessar Portal do Aluno
+                        </a>
+                        <a href="admin.html" class="w-full sm:w-auto bg-slate-800 hover:bg-slate-900 text-white font-bold text-sm px-6 py-3.5 rounded-xl transition">
+                            <i class="fa-solid fa-table-list mr-1.5"></i> Ver no Painel Admin (Secretaria)
+                        </a>
+                        <a href="index.html" class="w-full sm:w-auto text-slate-600 hover:text-slate-900 font-semibold text-sm px-4 py-3.5">
+                            Voltar ao Início
+                        </a>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+
+    </main>
+
+    <!-- RODAPÉ COMPACTO -->
+    <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs text-slate-500">
+        <div class="max-w-5xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-2">
+            <span>© 2026 Colégio Dom Hélder • Afogados da Ingazeira/PE</span>
+            <span class="flex items-center gap-1.5">
+                <i class="fa-solid fa-shield-halved text-emerald-500"></i> Pagamentos processados por Asaas Gestão Financeira S.A.
+            </span>
+        </div>
+    </footer>
+
+    <!-- LOGICA DO CHECKOUT MULTI-STEP -->
+    <script src="js/store.js"></script>
+    <script>
+        let currentStep = 1;
+
+        function goToStep(step) {
+            // Validações básicas antes de avançar
+            if (step === 2) {
+                const studentName = document.getElementById('student-name').value.trim();
+                const studentDob = document.getElementById('student-dob').value;
+                if (!studentName || !studentDob) {
+                    alert('Por favor, preencha o nome do aluno e a data de nascimento.');
+                    return;
+                }
+            }
+            if (step === 3) {
+                const guardianName = document.getElementById('guardian-name').value.trim();
+                const guardianCpf = document.getElementById('guardian-cpf').value.trim();
+                const guardianPhone = document.getElementById('guardian-phone').value.trim();
+                const guardianEmail = document.getElementById('guardian-email').value.trim();
+                
+                if (!guardianName || !guardianCpf || !guardianPhone || !guardianEmail) {
+                    alert('Por favor, preencha todos os dados do responsável financeiro.');
+                    return;
+                }
+
+                // Atualizar o resumo do Passo 3
+                document.getElementById('summary-student').innerText = document.getElementById('student-name').value;
+                const grade = document.getElementById('student-grade').value;
+                const shift = document.querySelector('input[name="shift"]:checked').value;
+                document.getElementById('summary-grade').innerText = `${grade} (${shift})`;
+            }
+
+            // Esconder todas as etapas
+            document.getElementById('step-1').classList.add('hidden');
+            document.getElementById('step-2').classList.add('hidden');
+            document.getElementById('step-3').classList.add('hidden');
+
+            // Mostrar a etapa selecionada
+            document.getElementById(`step-${step}`).classList.remove('hidden');
+
+            // Atualizar barra de progresso
+            currentStep = step;
+            const fillWidth = step === 1 ? '0%' : step === 2 ? '50%' : '100%';
+            document.getElementById('progress-bar-fill').style.width = fillWidth;
+
+            // Atualizar classes dos indicadores
+            document.querySelectorAll('.step-indicator').forEach(ind => {
+                const stepNum = parseInt(ind.getAttribute('data-step'));
+                const circle = ind.querySelector('div');
+                const label = ind.querySelector('span');
+
+                if (stepNum <= step) {
+                    circle.className = 'w-10 h-10 rounded-full bg-brand-royal text-white font-bold flex items-center justify-center text-sm shadow-md transition';
+                    label.className = 'text-[11px] font-bold text-brand-navy mt-1.5';
+                } else {
+                    circle.className = 'w-10 h-10 rounded-full bg-slate-200 text-slate-600 font-bold flex items-center justify-center text-sm transition';
+                    label.className = 'text-[11px] font-semibold text-slate-500 mt-1.5';
+                }
+            });
+
+            window.scrollTo({ top: 100, behavior: 'smooth' });
+        }
+
+        // Alternar abas de pagamento
+        function togglePaymentTab(type) {
+            document.getElementById('payment-pix-box').classList.add('hidden');
+            document.getElementById('payment-card-box').classList.add('hidden');
+            document.getElementById('payment-boleto-box').classList.add('hidden');
+
+            if (type === 'pix') document.getElementById('payment-pix-box').classList.remove('hidden');
+            if (type === 'card') document.getElementById('payment-card-box').classList.remove('hidden');
+            if (type === 'boleto') document.getElementById('payment-boleto-box').classList.remove('hidden');
+        }
+
+        // Copiar chave Pix
+        function copyPixCode() {
+            const input = document.getElementById('pix-code');
+            input.select();
+            input.setSelectionRange(0, 99999);
+            navigator.clipboard.writeText(input.value);
+            
+            const feedback = document.getElementById('copy-feedback');
+            feedback.classList.remove('hidden');
+            setTimeout(() => feedback.classList.add('hidden'), 3500);
+        }
+
+        // Máscaras de CPF e Telefone
+        function maskCPF(i) {
+            let v = i.value.replace(/\D/g, "");
+            v = v.replace(/(\d{3})(\d)/, "$1.$2");
+            v = v.replace(/(\d{3})(\d)/, "$1.$2");
+            v = v.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+            i.value = v;
+        }
+
+        function maskPhone(i) {
+            let v = i.value.replace(/\D/g, "");
+            v = v.replace(/^(\d{2})(\d)/g, "($1) $2");
+            v = v.replace(/(\d)(\d{4})$/, "$1-$2");
+            i.value = v;
+        }
+
+        // Simular aprovação Asaas e salvar na Store
+        function simulatePaymentSuccess(method = 'PIX (Asaas)') {
+            const studentName = document.getElementById('student-name').value || 'Arthur Emanuel da Silva';
+            const grade = document.getElementById('student-grade').value || '1º Ano - Fundamental I';
+            const shift = document.querySelector('input[name="shift"]:checked')?.value || 'Manhã';
+            const guardianName = document.getElementById('guardian-name').value || 'Roberto Carlos';
+            const guardianCpf = document.getElementById('guardian-cpf').value || '084.***.***-21';
+            const guardianPhone = document.getElementById('guardian-phone').value || '(87) 99999-0000';
+            const guardianEmail = document.getElementById('guardian-email').value || 'roberto@exemplo.com';
+
+            // Salvar no SchoolStore compartilhado
+            const newRecord = SchoolStore.addEnrollment({
+                studentName,
+                grade,
+                shift,
+                guardianName,
+                cpf: guardianCpf,
+                whatsapp: guardianPhone,
+                email: guardianEmail,
+                amount: 300.00,
+                paymentMethod: method
+            });
+
+            // Preencher recibo
+            document.getElementById('receipt-id').innerText = newRecord.id;
+            document.getElementById('receipt-student').innerText = studentName;
+            document.getElementById('receipt-grade').innerText = `${grade} (${shift})`;
+            document.getElementById('receipt-guardian').innerText = guardianName;
+
+            // Esconder tela 3 e exibir sucesso
+            document.getElementById('step-3').classList.add('hidden');
+            document.getElementById('step-success').classList.remove('hidden');
+            window.scrollTo({ top: 100, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
