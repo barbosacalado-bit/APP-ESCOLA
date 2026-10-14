@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colégio Dom Hélder | O Seu Colégio — Excelência, Acolhimento e Inovação</title>
+    <title>Colégio Dom Hélder | Tradição, Inovação e Acolhimento — Afogados da Ingazeira</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome & Google Fonts -->
+    <!-- FontAwesome 6 & Google Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
@@ -21,184 +21,215 @@
                     },
                     colors: {
                         brand: {
-                            navy: '#09162a',         /* Azul-marinho profundo e solene */
-                            midnight: '#061020',     /* Azul noite para superfícies de autoridade */
-                            royal: '#1d4ed8',        /* Azul cobalto equilibrado (sem saturação excessiva) */
-                            accent: '#d97706',       /* Âmbar dourado nobre para conversão */
-                            accentLight: '#fef3c7',  /* Fundo sutil para detalhes em destaque */
-                            sand: '#f8f9fa',         /* Neutro sofisticado que substitui o cinza genérico */
-                            surface: '#ffffff',
-                            slateDark: '#1e293b'
+                            navy: '#0c1b33',        /* Azul-marinho profundo da tradição */
+                            midnight: '#071224',    /* Azul noite nobre para contrastes e rodapé */
+                            royal: '#1a56db',       /* Azul institucional vibrante */
+                            royalHover: '#1644b0',
+                            accent: '#f59e0b',      /* Âmbar dourado do Edulerns para conversão */
+                            accentHover: '#d97706',
+                            sand: '#f8fafc',        /* Neutro areia para alternância de seções */
+                            cardBg: '#ffffff',
+                            muted: '#64748b'
                         }
                     },
                     boxShadow: {
-                        'editorial': '0 25px 50px -12px rgba(9, 22, 42, 0.08), 0 0 0 1px rgba(9, 22, 42, 0.03)',
-                        'editorial-hover': '0 30px 60px -15px rgba(9, 22, 42, 0.14), 0 0 0 1px rgba(29, 78, 216, 0.15)',
-                        'subtle-card': '0 4px 20px -2px rgba(9, 22, 42, 0.04), 0 0 0 1px rgba(9, 22, 42, 0.04)'
+                        'edulerns-card': '0 12px 35px -8px rgba(12, 27, 51, 0.08), 0 0 0 1px rgba(12, 27, 51, 0.04)',
+                        'edulerns-hover': '0 25px 50px -12px rgba(12, 27, 51, 0.16), 0 0 0 1px rgba(26, 86, 219, 0.15)',
+                        'float-badge': '0 15px 35px -5px rgba(12, 27, 51, 0.18), 0 0 0 1px rgba(255, 255, 255, 0.8)'
                     }
                 }
             }
         }
     </script>
     <style>
-        .hero-atmospheric {
-            background: radial-gradient(circle at 85% 20%, rgba(29, 78, 216, 0.15) 0%, transparent 55%),
-                        radial-gradient(circle at 10% 85%, rgba(217, 119, 6, 0.08) 0%, transparent 45%),
-                        #09162a;
+        /* Elementos gráficos de apoio sutis inspirados no padrão Edulerns */
+        .pattern-dots {
+            background-image: radial-gradient(rgba(26, 86, 219, 0.15) 1.5px, transparent 1.5px);
+            background-size: 24px 24px;
         }
-        .editorial-rule {
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(148, 163, 184, 0.3), transparent);
+        .hero-gradient-overlay {
+            background: linear-gradient(135deg, rgba(12, 27, 51, 0.96) 0%, rgba(12, 27, 51, 0.88) 55%, rgba(7, 18, 36, 0.94) 100%);
         }
     </style>
 </head>
-<body class="bg-[#fbfbfc] font-sans text-slate-800 antialiased selection:bg-brand-royal selection:text-white">
+<body class="bg-[#fafbfe] font-sans text-slate-800 antialiased selection:bg-brand-royal selection:text-white">
 
-    <!-- 1. BARRA SUPERIOR INSTITUCIONAL (DISCRETA E REFINADA) -->
+    <!-- ========================================== -->
+    <!-- 1. BARRA SUPERIOR INSTITUCIONAL (UTILITY BAR) -->
+    <!-- ========================================== -->
     <header class="w-full">
-        <div class="bg-brand-midnight border-b border-white/[0.08] text-[11px] text-slate-400 py-2 px-4 sm:px-8">
+        <div class="bg-brand-midnight border-b border-white/[0.08] text-[11px] text-slate-300 py-2.5 px-4 sm:px-8">
             <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
                 <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 sm:gap-6">
-                    <span class="flex items-center gap-1.5 hover:text-slate-200 transition">
-                        <i class="fa-solid fa-location-dot text-brand-accent/80 text-[10px]"></i>
+                    <span class="flex items-center gap-1.5 hover:text-white transition">
+                        <i class="fa-solid fa-location-dot text-brand-accent text-[11px]"></i>
                         Av. José Pereira de Souza, 275 • Afogados da Ingazeira/PE
                     </span>
-                    <span class="hidden sm:flex items-center gap-1.5 hover:text-slate-200 transition">
-                        <i class="fa-solid fa-phone text-slate-500 text-[10px]"></i>
+                    <span class="hidden sm:flex items-center gap-1.5 hover:text-white transition">
+                        <i class="fa-solid fa-phone text-slate-400 text-[10px]"></i>
                         (87) 3838-2859
                     </span>
-                    <span class="flex items-center gap-1.5 hover:text-slate-200 transition">
-                        <i class="fa-brands fa-whatsapp text-emerald-400 text-[11px]"></i>
+                    <span class="flex items-center gap-1.5 hover:text-white transition">
+                        <i class="fa-brands fa-whatsapp text-emerald-400 text-xs"></i>
                         (87) 99663-0300
                     </span>
                 </div>
                 <div class="flex items-center gap-4">
-                    <a href="admin.html" class="flex items-center gap-1 text-slate-400 hover:text-white transition font-medium">
-                        <i class="fa-solid fa-lock text-[10px] text-slate-500"></i> Painel da Secretaria
+                    <span class="text-slate-400 hidden lg:inline">Plataforma Oficial "O Seu Colégio"</span>
+                    <span class="text-white/20 hidden lg:inline">•</span>
+                    <a href="admin.html" class="flex items-center gap-1.5 text-slate-300 hover:text-white transition font-medium">
+                        <i class="fa-solid fa-lock text-[10px] text-brand-accent"></i> Painel da Secretaria
                     </a>
                     <span class="text-white/20">•</span>
-                    <a href="portal.html" class="flex items-center gap-1.5 text-white bg-white/10 hover:bg-white/15 px-3 py-1 rounded-md transition font-medium">
-                        <i class="fa-solid fa-user-graduate text-brand-accent text-[11px]"></i> Área do Aluno
+                    <a href="portal.html" class="flex items-center gap-1.5 text-white bg-brand-royal/90 hover:bg-brand-royal px-3 py-1 rounded-lg transition font-semibold shadow-sm">
+                        <i class="fa-solid fa-user-graduate text-[11px]"></i> Área do Aluno
                     </a>
                 </div>
             </div>
         </div>
 
-        <!-- 2. NAVBAR PRINCIPAL (CONTEMPORÂNEA, EQUILIBRADA E INSTITUCIONAL) -->
-        <nav id="navbar" class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/60 transition-all duration-300">
+        <!-- ========================================== -->
+        <!-- 2. NAVBAR PRINCIPAL FIXA COM IDENTIDADE CDH -->
+        <!-- ========================================== -->
+        <nav id="navbar" class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 transition-all duration-300 shadow-sm">
             <div class="max-w-7xl mx-auto px-4 sm:px-8 py-3.5 flex justify-between items-center">
-                <!-- LOGO INSTITUCIONAL COM IDENTIDADE PROPORCIONADA -->
+                <!-- LOGOMARCA OFICIAL COM BRASÃO MODERNO -->
                 <a href="index.html" class="flex items-center gap-3.5 group">
-                    <div class="w-11 h-11 rounded-xl bg-brand-navy flex items-center justify-center text-white text-lg font-extrabold tracking-wider border border-white/10 shadow-sm group-hover:bg-brand-royal transition duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-navy to-brand-royal flex items-center justify-center text-white text-xl font-extrabold shadow-md shadow-blue-950/20 group-hover:scale-105 transition duration-300 border border-white/20">
                         <span>CDH</span>
                     </div>
                     <div>
                         <span class="font-heading font-extrabold text-xl text-brand-navy tracking-tight block leading-tight">
                             Colégio Dom Hélder
                         </span>
-                        <span class="text-[10px] font-semibold tracking-wider text-slate-500 uppercase block">
-                            Educar é um ato de amor • Desde 1999
+                        <span class="text-[10px] font-semibold tracking-wider text-brand-royal uppercase block">
+                            Educar é um ato de amor • 26 Anos de Tradição
                         </span>
                     </div>
                 </a>
 
-                <!-- NAVEGAÇÃO EDITORIAL DESKTOP -->
+                <!-- LINKS DE NAVEGAÇÃO INSTITUCIONAL -->
                 <div class="hidden lg:flex items-center gap-8 font-medium text-[13px] tracking-wide text-slate-600">
                     <a href="index.html" class="text-brand-navy font-bold hover:text-brand-royal transition">Início</a>
-                    <a href="#proposta" class="hover:text-brand-navy transition">Proposta Pedagógica</a>
-                    <a href="#segmentos" class="hover:text-brand-navy transition">Segmentos</a>
-                    <a href="#docentes" class="hover:text-brand-navy transition">Corpo Docente</a>
-                    <a href="#noticias" class="hover:text-brand-navy transition">Notícias</a>
-                    <a href="#eventos" class="hover:text-brand-navy transition">Agenda</a>
+                    <a href="#proposta" class="hover:text-brand-royal transition">A Escola</a>
+                    <a href="#segmentos" class="hover:text-brand-royal transition">Segmentos</a>
+                    <a href="#docentes" class="hover:text-brand-royal transition">Corpo Docente</a>
+                    <a href="#noticias" class="hover:text-brand-royal transition">Notícias</a>
+                    <a href="#eventos" class="hover:text-brand-royal transition">Agenda</a>
                 </div>
 
-                <!-- BOTÃO DE AÇÃO PRINCIPAL COM DESIGN REFINADO -->
+                <!-- BOTÃO DE DESTAQUE COMERCIAL -->
                 <div class="flex items-center gap-3">
-                    <a href="matricula.html" class="inline-flex items-center gap-2 bg-brand-navy hover:bg-slate-900 text-white font-bold text-xs tracking-wider uppercase px-5 py-2.5 rounded-xl border border-white/10 shadow-sm hover:shadow transition duration-200">
-                        <span class="w-1.5 h-1.5 rounded-full bg-brand-accent"></span>
+                    <a href="matricula.html" class="inline-flex items-center gap-2 bg-gradient-to-r from-brand-accent to-amber-600 hover:from-amber-600 hover:to-brand-accent text-brand-midnight font-extrabold text-xs uppercase tracking-wider px-5 py-3 rounded-xl shadow-md shadow-amber-500/20 hover:-translate-y-0.5 active:translate-y-0 transition duration-200">
+                        <i class="fa-solid fa-graduation-cap text-xs"></i>
                         Faça sua Matrícula
-                        <i class="fa-solid fa-arrow-right text-[10px] text-slate-400"></i>
+                        <i class="fa-solid fa-arrow-right text-[10px]"></i>
                     </a>
                 </div>
             </div>
         </nav>
     </header>
 
-    <!-- 3. HERO PRINCIPAL — PRIMEIRA IMPRESSÃO DE ALTO IMPACTO EDITORIAL -->
-    <section class="hero-atmospheric text-white pt-16 pb-20 lg:pt-24 lg:pb-28 relative overflow-hidden">
+    <!-- ============================================================== -->
+    <!-- 3. HERO SECTION — IMPACTO VISUAL DE ALTO PADRÃO (ESTILO EDULERNS) -->
+    <!-- ============================================================== -->
+    <section class="relative bg-brand-navy text-white pt-16 pb-24 lg:pt-24 lg:pb-32 overflow-hidden">
+        <!-- Efeitos atmosféricos e gráficos inspirados no Edulerns -->
+        <div class="absolute inset-0 pattern-dots opacity-20 pointer-events-none"></div>
+        <div class="absolute -top-32 -right-32 w-96 h-96 bg-brand-royal/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 left-10 w-80 h-80 bg-brand-accent/15 rounded-full blur-3xl pointer-events-none"></div>
+
         <div class="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
                 
-                <!-- COLUNA ESQUERDA: TEXTO E HIERARQUIA EDITORIAL -->
+                <!-- COLUNA ESQUERDA: TIPOGRAFIA DE IMPACTO E CONVERSÃO -->
                 <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                    <div class="inline-flex items-center gap-2 bg-white/[0.06] border border-white/[0.12] px-3.5 py-1.5 rounded-full text-xs font-semibold text-slate-300">
-                        <span class="w-1.5 h-1.5 rounded-full bg-brand-accent"></span>
-                        <span>26 Anos de Tradição e Excelência em Afogados da Ingazeira</span>
+                    <div class="inline-flex items-center gap-2 bg-white/[0.08] border border-white/15 px-4 py-1.5 rounded-full text-xs font-semibold text-amber-300">
+                        <span class="w-2 h-2 rounded-full bg-brand-accent animate-pulse"></span>
+                        <span>Excelência Educacional • Tradição e Futuro</span>
                     </div>
 
-                    <h1 class="font-heading font-extrabold text-4xl sm:text-5xl lg:text-[3.5rem] tracking-tight leading-[1.12] text-white">
-                        Educação que transforma com <span class="italic font-normal text-amber-200">afeto</span>, rigor e inovação.
+                    <h1 class="font-heading font-extrabold text-4xl sm:text-5xl lg:text-[3.75rem] tracking-tight leading-[1.12] text-white">
+                        Educação que forma cidadãos com <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-200 to-amber-400">afeto, liderança</span> e inovação.
                     </h1>
 
                     <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
-                        Do acolhimento na <strong>Educação Infantil (2 a 5 anos)</strong> à liderança acadêmica no <strong>Ensino Fundamental (1º ao 9º ano)</strong>. Uma formação integral fundamentada no sociointeracionismo, robótica maker e prática bilíngue.
+                        Do acolhimento na <strong>Educação Infantil (2 a 5 anos)</strong> à sólida preparação nos <strong>Anos Finais (1º ao 9º ano)</strong>. Metodologia sociointeracionista, robótica maker sustentável, prática bilíngue e destaque olímpico em Afogados da Ingazeira.
                     </p>
 
                     <!-- AÇÕES PRINCIPAIS -->
-                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
-                        <a href="matricula.html" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-brand-accent hover:bg-amber-600 text-brand-midnight font-extrabold text-sm px-7 py-3.5 rounded-xl shadow-lg shadow-amber-500/20 hover:-translate-y-0.5 active:translate-y-0 transition duration-200">
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-3">
+                        <a href="matricula.html" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-brand-accent to-amber-600 hover:from-amber-600 hover:to-brand-accent text-brand-midnight font-extrabold text-sm px-8 py-4 rounded-xl shadow-xl shadow-amber-500/25 hover:-translate-y-0.5 active:translate-y-0 transition duration-200">
+                            <i class="fa-solid fa-bolt"></i>
                             Matrículas Abertas 2026/2027
-                            <i class="fa-solid fa-arrow-right text-xs"></i>
                         </a>
-                        <a href="#proposta" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/[0.08] hover:bg-white/[0.14] border border-white/[0.16] text-white font-semibold text-sm px-6 py-3.5 rounded-xl transition duration-200">
-                            Conhecer a Proposta Pedagógica
+                        <a href="#proposta" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/[0.08] hover:bg-white/[0.15] border border-white/20 text-white font-semibold text-sm px-7 py-4 rounded-xl backdrop-blur-sm transition duration-200">
+                            <i class="fa-regular fa-compass"></i>
+                            Conhecer a Escola
                         </a>
                     </div>
 
-                    <!-- CREDENCIAIS INSTITUCIONAIS DISCRETAS (REDUÇÃO DE POLUIÇÃO VISUAL) -->
-                    <div class="pt-4 border-t border-white/[0.08] flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-slate-400">
+                    <!-- FAIXA DE CREDENCIAIS DISCRETAS COM ÍCONES REFINADOS -->
+                    <div class="pt-4 border-t border-white/10 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-slate-300">
                         <span class="flex items-center gap-2">
-                            <i class="fa-solid fa-check text-brand-accent text-[11px]"></i>
-                            Parceria Rede Pitágoras & Opet
+                            <i class="fa-solid fa-circle-check text-emerald-400"></i> Parceria Rede Pitágoras & Opet
                         </span>
                         <span class="flex items-center gap-2">
-                            <i class="fa-solid fa-check text-brand-accent text-[11px]"></i>
-                            Reserva Imediata via Asaas
+                            <i class="fa-solid fa-circle-check text-cyan-300"></i> Reserva Imediata via Asaas
                         </span>
                         <span class="flex items-center gap-2">
-                            <i class="fa-solid fa-check text-brand-accent text-[11px]"></i>
-                            Destaque nas Olimpíadas OBA
+                            <i class="fa-solid fa-circle-check text-brand-accent"></i> Medalhas Olimpíadas OBA
                         </span>
                     </div>
                 </div>
 
-                <!-- COLUNA DIREITA: FOTOGRAFIA PROTAGONISTA COM ACABAMENTO ARQUITETÔNICO -->
+                <!-- COLUNA DIREITA: COMPOSIÇÃO EDITORIAL ASSIMÉTRICA COM CARDS FLUTUANTES -->
                 <div class="lg:col-span-5 relative">
                     <div class="relative mx-auto max-w-md lg:max-w-none">
                         
-                        <!-- MOLDURA FOTOGRÁFICA PRINCIPAL -->
-                        <div class="relative rounded-2xl overflow-hidden border border-white/[0.15] shadow-2xl bg-slate-900 aspect-[4/5] group">
+                        <!-- MOLDURA PRINCIPAL DA FOTOGRAFIA COM CORTE ARQUITETÔNICO -->
+                        <div class="relative rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl bg-slate-900 aspect-[4/5] group">
                             <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=1000&q=80" 
-                                 alt="Estudantes em ambiente de aprendizagem moderno no Colégio Dom Hélder" 
-                                 class="w-full h-full object-cover group-hover:scale-[1.02] transition duration-700">
-                            <div class="absolute inset-0 bg-gradient-to-t from-brand-midnight/80 via-transparent to-transparent"></div>
+                                 alt="Alunos do Colégio Dom Hélder em sala de aula interativa" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-brand-midnight/85 via-transparent to-transparent"></div>
                             
-                            <!-- LEGENDA ARQUITETÔNICA ELEGANTE ANCORADA -->
-                            <div class="absolute bottom-5 left-5 right-5 text-left bg-brand-midnight/85 backdrop-blur-md p-4 rounded-xl border border-white/10">
-                                <span class="text-brand-accent text-[10px] font-bold uppercase tracking-wider block">
-                                    Ambiente de Convivência & Criação
+                            <!-- LEGENDA ANCORADA COM REFINAMENTO EDITORIAL -->
+                            <div class="absolute bottom-6 left-6 right-6 text-left bg-brand-midnight/90 backdrop-blur-md p-4 rounded-2xl border border-white/15">
+                                <span class="bg-brand-accent text-brand-midnight text-[9px] font-extrabold uppercase px-2.5 py-0.5 rounded tracking-wider">
+                                    Ambiente Estimulante
                                 </span>
-                                <h3 class="text-sm font-bold text-white mt-0.5">Infraestrutura Pedagógica Completa</h3>
-                                <p class="text-[11px] text-slate-300 mt-0.5">Piscinas, quadra poliesportiva, parques e salas interativas de estudo.</p>
+                                <h3 class="text-sm font-bold text-white mt-1">Infraestrutura Pedagógica de Referência</h3>
+                                <p class="text-[11px] text-slate-300 mt-0.5">Piscinas, quadra poliesportiva, salas maker e espaços de leitura.</p>
                             </div>
                         </div>
 
-                        <!-- SELO DE CONQUISTA DISCRETO E INTEGRADO -->
-                        <div class="absolute -top-3 -right-3 bg-white text-brand-navy py-2 px-3.5 rounded-xl shadow-lg border border-slate-100 flex items-center gap-2.5">
-                            <span class="text-base">🏆</span>
+                        <!-- BADGE FLUTUANTE 1: TROFÉU JEPS (CANTO SUPERIOR DIREITO) -->
+                        <div class="absolute -top-4 -right-4 bg-white text-slate-900 py-2.5 px-4 rounded-2xl shadow-float-badge border border-slate-100 flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-600 flex items-center justify-center text-lg font-bold">
+                                🏆
+                            </div>
                             <div>
-                                <span class="text-[11px] font-extrabold block leading-tight text-brand-navy">Vice-Campeão JEPS 2026</span>
-                                <span class="text-[9px] font-medium text-slate-500">Basquete, Natação e Atletismo</span>
+                                <span class="text-xs font-extrabold text-brand-navy block leading-tight">Vice-Campeão JEPS 2026</span>
+                                <span class="text-[10px] font-semibold text-slate-500">Basquete, Natação e Atletismo</span>
+                            </div>
+                        </div>
+
+                        <!-- BADGE FLUTUANTE 2: 26 ANOS DE HISTÓRIA (CANTO INFERIOR ESQUERDO) -->
+                        <div class="absolute -bottom-5 -left-4 sm:-left-6 bg-white text-slate-900 p-4 rounded-2xl shadow-float-badge border border-slate-100 flex items-center gap-3.5">
+                            <div class="w-12 h-12 rounded-xl bg-brand-royal text-white flex items-center justify-center font-heading font-extrabold text-xl shadow-md shadow-blue-500/30">
+                                26+
+                            </div>
+                            <div>
+                                <div class="flex text-amber-400 text-xs gap-0.5">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <span class="text-xs font-extrabold text-brand-navy block leading-tight mt-0.5">Anos em Afogados da Ingazeira</span>
+                                <span class="text-[10px] font-medium text-slate-500">Reconhecimento e Confiança das Famílias</span>
                             </div>
                         </div>
 
@@ -209,186 +240,231 @@
         </div>
     </section>
 
-    <!-- 4. FAIXA DE INDICADORES (COMPOSIÇÃO ARQUITETÔNICA ELEGANTE) -->
-    <section class="bg-white border-b border-slate-200/80 py-8 px-4 sm:px-8">
-        <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 divide-y md:divide-y-0 md:divide-x divide-slate-200/80 text-center">
-            <div class="pt-3 md:pt-0">
-                <span class="font-heading font-extrabold text-3xl sm:text-4xl text-brand-navy block">26 Anos</span>
-                <span class="text-[11px] font-semibold uppercase tracking-wider text-slate-500 mt-1 block">Tradição & Afeto</span>
+    <!-- ============================================================== -->
+    <!-- 4. FAIXA DE INDICADORES INSTITUCIONAIS (PADRÃO COUNTER EDULERNS) -->
+    <!-- ============================================================== -->
+    <section class="bg-white border-b border-slate-200/80 py-10 px-4 sm:px-8 relative z-20">
+        <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 divide-y md:divide-y-0 md:divide-x divide-slate-200 text-center">
+            <div class="pt-4 md:pt-0">
+                <span class="font-heading font-extrabold text-3xl sm:text-4xl text-brand-navy block">26+ Anos</span>
+                <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500 mt-1 block">História & Tradição</span>
             </div>
-            <div class="pt-3 md:pt-0">
+            <div class="pt-4 md:pt-0">
                 <span class="font-heading font-extrabold text-3xl sm:text-4xl text-brand-royal block">100%</span>
-                <span class="text-[11px] font-semibold uppercase tracking-wider text-slate-500 mt-1 block">Docentes Qualificados</span>
+                <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500 mt-1 block">Professores Especialistas</span>
             </div>
-            <div class="pt-3 md:pt-0">
+            <div class="pt-4 md:pt-0">
                 <span class="font-heading font-extrabold text-3xl sm:text-4xl text-brand-accent block">15+</span>
-                <span class="text-[11px] font-semibold uppercase tracking-wider text-slate-500 mt-1 block">Modalidades & Oficinas</span>
+                <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500 mt-1 block">Modalidades & Oficinas</span>
             </div>
-            <div class="pt-3 md:pt-0">
-                <span class="font-heading font-extrabold text-3xl sm:text-4xl text-emerald-600 block">Medalhas</span>
-                <span class="text-[11px] font-semibold uppercase tracking-wider text-slate-500 mt-1 block">Olimpíadas OBA & MOBFOG</span>
+            <div class="pt-4 md:pt-0">
+                <span class="font-heading font-extrabold text-3xl sm:text-4xl text-emerald-600 block">Top OBA</span>
+                <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500 mt-1 block">Olimpíadas de Astronomia</span>
             </div>
         </div>
     </section>
 
-    <!-- 5. PROPOSTA PEDAGÓGICA (SEÇÃO EDITORIAL PARA QUEBRAR A MONOTONIA DE RITMO) -->
-    <section id="proposta" class="py-20 lg:py-28 bg-[#f5f6f8] border-b border-slate-200/60">
+    <!-- ============================================================== -->
+    <!-- 5. SEÇÃO INSTITUCIONAL — COMPOSIÇÃO EDITORIAL ASSIMÉTRICA ("GET TO KNOW US") -->
+    <!-- ============================================================== -->
+    <section id="proposta" class="py-24 bg-brand-sand border-b border-slate-200/70 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
                 
-                <div class="lg:col-span-5 space-y-5">
-                    <span class="text-[11px] font-bold uppercase tracking-widest text-brand-royal bg-blue-50 px-3 py-1 rounded-md border border-blue-100">
-                        Nossa Abordagem
-                    </span>
-                    <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-brand-navy leading-tight">
-                        O afeto é o alicerce sobre o qual a inteligência floresce.
-                    </h2>
-                    <p class="text-slate-600 text-sm leading-relaxed">
-                        Fundado em 1999, o Colégio Dom Hélder consolidou uma proposta pedagógica sociointeracionista que valoriza as singularidades de cada criança, incentivando a curiosidade investigativa, o equilíbrio emocional e a responsabilidade social.
-                    </p>
+                <!-- DUAS IMAGENS COMPLEMENTARES SOBREPOSTAS (ESTILO EDITORIAL EDULERNS) -->
+                <div class="lg:col-span-6 relative">
+                    <div class="relative max-w-md mx-auto lg:max-w-none">
+                        <!-- Imagem principal maior -->
+                        <div class="w-4/5 rounded-3xl overflow-hidden shadow-edulerns-card border border-slate-200 aspect-[4/5]">
+                            <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Estudante em laboratório de estudo do Colégio Dom Hélder" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                        <!-- Imagem secundária sobreposta -->
+                        <div class="absolute -bottom-8 right-0 w-3/5 rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-[4/3]">
+                            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=80" 
+                                 alt="Ambiente colaborativo de sala de aula" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                        <!-- Selo de compromisso afetivo -->
+                        <div class="absolute top-1/2 -left-6 bg-brand-navy text-white p-4 rounded-2xl shadow-xl hidden sm:flex items-center gap-3">
+                            <span class="w-10 h-10 rounded-xl bg-brand-accent/20 text-brand-accent flex items-center justify-center font-bold text-lg">
+                                <i class="fa-solid fa-heart"></i>
+                            </span>
+                            <div>
+                                <span class="text-xs font-bold block">Educar com Amor</span>
+                                <span class="text-[10px] text-slate-300">Princípio Sociointeracionista</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COLUNA DE TEXTO & PILARES PEDAGÓGICOS -->
+                <div class="lg:col-span-6 space-y-6 lg:pl-4">
+                    <div class="space-y-3">
+                        <span class="text-[11px] font-bold uppercase tracking-widest text-brand-royal bg-blue-50 px-3.5 py-1.5 rounded-full border border-blue-100">
+                            Conheça Nossa Escola
+                        </span>
+                        <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-brand-navy leading-tight">
+                            Uma concepção de ensino voltada para a autonomia e a resiliência.
+                        </h2>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Fundado em 1999, o <strong>Colégio Dom Hélder</strong> constrói um ensino voltado para a formação de cidadãos preparados para os desafios do mundo contemporâneo. Acreditamos que os saberes são construídos na relação com os pares e nas experiências reais.
+                        </p>
+                    </div>
+
+                    <!-- LISTA DE PILARES COM ÍCONES REFINADOS (EDULERNS STYLE) -->
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-brand-royal transition duration-200">
+                            <div class="w-11 h-11 rounded-xl bg-blue-50 text-brand-royal flex items-center justify-center text-lg shrink-0">
+                                <i class="fa-solid fa-users"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-heading font-bold text-base text-brand-navy">Metodologia Sociointeracionista</h4>
+                                <p class="text-xs text-slate-500 mt-0.5">Articulação de conhecimentos antropológicos, culturais e emocionais para o desenvolvimento integral.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-brand-royal transition duration-200">
+                            <div class="w-11 h-11 rounded-xl bg-amber-50 text-brand-accent flex items-center justify-center text-lg shrink-0">
+                                <i class="fa-solid fa-microchip"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-heading font-bold text-base text-brand-navy">Robótica Sustentável & Cultura Maker</h4>
+                                <p class="text-xs text-slate-500 mt-0.5">Estímulo ao pensamento computacional e resolução de problemas práticos desde os anos iniciais.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-brand-royal transition duration-200">
+                            <div class="w-11 h-11 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-lg shrink-0">
+                                <i class="fa-solid fa-language"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-heading font-bold text-base text-brand-navy">Prática Bilíngue Aplicada</h4>
+                                <p class="text-xs text-slate-500 mt-0.5">Vivência oral constante onde conteúdos regulares são vivenciados nas aulas de língua inglesa.</p>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="pt-2">
                         <a href="matricula.html" class="inline-flex items-center gap-2 text-sm font-bold text-brand-navy hover:text-brand-royal transition">
-                            Agendar Visita com a Coordenação <i class="fa-solid fa-arrow-right text-xs text-brand-accent"></i>
+                            Agendar Visita com a Coordenação Pedagógica <i class="fa-solid fa-arrow-right text-xs text-brand-accent"></i>
                         </a>
                     </div>
                 </div>
 
-                <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-6">
-                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-subtle-card space-y-3">
-                        <span class="w-8 h-8 rounded-lg bg-blue-50 text-brand-royal font-bold text-xs flex items-center justify-center">01</span>
-                        <h3 class="font-heading font-bold text-lg text-brand-navy">Sociointeracionismo</h3>
-                        <p class="text-xs text-slate-600 leading-relaxed">
-                            O aluno é protagonista da construção do próprio conhecimento, mediado por professores experientes e motivados.
-                        </p>
-                    </div>
-
-                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-subtle-card space-y-3">
-                        <span class="w-8 h-8 rounded-lg bg-amber-50 text-brand-accent font-bold text-xs flex items-center justify-center">02</span>
-                        <h3 class="font-heading font-bold text-lg text-brand-navy">Cultura Maker & Robótica</h3>
-                        <p class="text-xs text-slate-600 leading-relaxed">
-                            Robótica sustentável integrada ao raciocínio lógico, unindo criatividade e tecnologia desde as primeiras fases escolares.
-                        </p>
-                    </div>
-
-                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-subtle-card space-y-3">
-                        <span class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 font-bold text-xs flex items-center justify-center">03</span>
-                        <h3 class="font-heading font-bold text-lg text-brand-navy">Formação Bilíngue</h3>
-                        <p class="text-xs text-slate-600 leading-relaxed">
-                            Vivências orais e imersão natural na língua inglesa, preparando para a cidadania em um cenário globalizado.
-                        </p>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
 
-    <!-- 6. SEGMENTOS DE ENSINO (REFINAMENTO VISUAL COM FOTOGRAFIAS CONTEXTUAIS E BOTÕES ELEGANTES) -->
-    <section id="segmentos" class="py-24 bg-white border-b border-slate-200/60">
+    <!-- ============================================================== -->
+    <!-- 6. SEGMENTOS EDUCACIONAIS — REDESENHO PREMIUM COM FOTOGRAFIAS E BOTÕES ELEGANTES -->
+    <!-- ============================================================== -->
+    <section id="segmentos" class="py-24 bg-white border-b border-slate-200/70">
         <div class="max-w-7xl mx-auto px-4 sm:px-8">
             <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
-                <span class="text-[11px] font-bold uppercase tracking-widest text-brand-navy bg-slate-100 px-3 py-1 rounded-md">
-                    Ciclos Educacionais
+                <span class="text-[11px] font-bold uppercase tracking-widest text-brand-royal bg-blue-50 px-3.5 py-1.5 rounded-full border border-blue-100">
+                    Segmentos de Ensino
                 </span>
                 <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-brand-navy leading-tight">
                     Uma trajetória completa<br> <span class="whitespace-nowrap">dos 2 aos 14 anos</span>
                 </h2>
                 <p class="text-slate-600 text-sm">
-                    Acompanhamento contínuo e estruturado em cada etapa do desenvolvimento infantil e juvenil.
+                    Acompanhamento contínuo e acolhedor em cada fase da formação acadêmica e humana.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
                 <!-- CARD 1: EDUCAÇÃO INFANTIL -->
-                <div class="bg-[#fbfbfc] rounded-2xl p-6 border border-slate-200/80 shadow-subtle-card hover:shadow-editorial-hover transition duration-300 flex flex-col justify-between group">
+                <div class="bg-white rounded-3xl p-6 border border-slate-200/90 shadow-edulerns-card hover:shadow-edulerns-hover hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
                     <div class="space-y-5">
-                        <div class="relative rounded-xl overflow-hidden aspect-[16/10] bg-slate-100">
+                        <div class="relative rounded-2xl overflow-hidden aspect-[16/10] bg-slate-100 shadow-sm">
                             <img src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&fit=crop&w=800&q=80" 
-                                 alt="Criança na Educação Infantil em atividade lúdica" 
+                                 alt="Criança na Educação Infantil em atividade lúdica e acolhedora" 
                                  class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            <span class="absolute top-3 left-3 bg-brand-navy/90 backdrop-blur-sm text-white text-[10px] font-bold uppercase px-2.5 py-1 rounded tracking-wider">
+                            <span class="absolute top-3 left-3 bg-amber-500 text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-full shadow-md tracking-wider">
                                 2 a 5 Anos
                             </span>
                         </div>
                         <div>
-                            <span class="text-[11px] font-semibold text-brand-accent uppercase tracking-wider block">Primeira Infância & Acolhimento</span>
-                            <h3 class="font-heading font-bold text-xl text-brand-navy mt-1">Educação Infantil</h3>
+                            <span class="text-[11px] font-bold text-amber-600 uppercase tracking-wider block">Primeira Infância & Afeto</span>
+                            <h3 class="font-heading font-bold text-2xl text-brand-navy mt-1">Educação Infantil</h3>
                         </div>
                         <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
-                            Ambiente acolhedor e lúdico com foco no desenvolvimento psicomotor, socialização, autonomia e musicalização dentro das normas da BNCC.
+                            Ambiente seguro, criativo e acolhedor. Estímulo à psicomotricidade, linguagem, convivência social e musicalização dentro das diretrizes da BNCC.
                         </p>
-                        <ul class="text-xs text-slate-500 space-y-2 pt-1 font-medium border-t border-slate-200/60">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-accent text-[11px]"></i> Parque infantil e piscina exclusiva</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-accent text-[11px]"></i> Projeto Pequenos Leitores</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-accent text-[11px]"></i> Agenda digital diária integrada</li>
+                        <ul class="text-xs text-slate-500 space-y-2 pt-1 font-medium border-t border-slate-100">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Parque infantil e piscina exclusiva</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Projeto Pequenos Leitores</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Acompanhamento diário via aplicativo</li>
                         </ul>
                     </div>
                     <div class="pt-6">
-                        <a href="matricula.html" class="w-full inline-flex items-center justify-center gap-2 bg-brand-navy hover:bg-slate-900 text-white font-bold text-xs uppercase tracking-wider py-3.5 px-5 rounded-xl transition duration-200">
-                            Garantir Vaga no Infantil <i class="fa-solid fa-arrow-right text-[10px] text-brand-accent"></i>
+                        <a href="matricula.html" class="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-extrabold text-xs uppercase tracking-wider py-3.5 px-6 rounded-2xl shadow-md shadow-amber-500/25 hover:shadow-lg transition duration-200">
+                            Garantir Vaga no Infantil <i class="fa-solid fa-arrow-right text-[10px]"></i>
                         </a>
                     </div>
                 </div>
 
                 <!-- CARD 2: ENSINO FUNDAMENTAL I -->
-                <div class="bg-[#fbfbfc] rounded-2xl p-6 border border-slate-200/80 shadow-subtle-card hover:shadow-editorial-hover transition duration-300 flex flex-col justify-between group">
+                <div class="bg-white rounded-3xl p-6 border border-slate-200/90 shadow-edulerns-card hover:shadow-edulerns-hover hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
                     <div class="space-y-5">
-                        <div class="relative rounded-xl overflow-hidden aspect-[16/10] bg-slate-100">
+                        <div class="relative rounded-2xl overflow-hidden aspect-[16/10] bg-slate-100 shadow-sm">
                             <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=800&q=80" 
-                                 alt="Estudante do Ensino Fundamental I em sala de aula" 
+                                 alt="Estudante do Fundamental I Anos Iniciais focado e feliz" 
                                  class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            <span class="absolute top-3 left-3 bg-brand-royal text-white text-[10px] font-bold uppercase px-2.5 py-1 rounded tracking-wider">
+                            <span class="absolute top-3 left-3 bg-brand-royal text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-full shadow-md tracking-wider">
                                 6 a 10 Anos
                             </span>
                         </div>
                         <div>
-                            <span class="text-[11px] font-semibold text-brand-royal uppercase tracking-wider block">1º ao 5º Ano • Anos Iniciais</span>
-                            <h3 class="font-heading font-bold text-xl text-brand-navy mt-1">Fundamental I</h3>
+                            <span class="text-[11px] font-bold text-brand-royal uppercase tracking-wider block">1º ao 5º Ano • Anos Iniciais</span>
+                            <h3 class="font-heading font-bold text-2xl text-brand-navy mt-1">Fundamental I</h3>
                         </div>
                         <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
-                            Alfabetização rigorosa, raciocínio lógico e estímulo à autonomia. Introdução à robótica sustentável, inglês com prática bilíngue e projetos de cidadania.
+                            Alfabetização sólida, raciocínio lógico e autonomia. Iniciação à robótica maker sustentável, inglês com prática bilíngue e oficinas de empreendedorismo.
                         </p>
-                        <ul class="text-xs text-slate-500 space-y-2 pt-1 font-medium border-t border-slate-200/60">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-royal text-[11px]"></i> Robótica maker sustentável</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-royal text-[11px]"></i> Prática bilíngue e oficinas de música</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-royal text-[11px]"></i> Consultoria Rede Pitágoras / Opet</li>
+                        <ul class="text-xs text-slate-500 space-y-2 pt-1 font-medium border-t border-slate-100">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-royal"></i> Robótica maker e educação tecnológica</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-royal"></i> Inglês diário e aulas de música</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-royal"></i> Consultoria Pedagógica Rede Pitágoras / Opet</li>
                         </ul>
                     </div>
                     <div class="pt-6">
-                        <a href="matricula.html" class="w-full inline-flex items-center justify-center gap-2 bg-brand-royal hover:bg-blue-800 text-white font-bold text-xs uppercase tracking-wider py-3.5 px-5 rounded-xl transition duration-200">
+                        <a href="matricula.html" class="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-brand-royal to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-extrabold text-xs uppercase tracking-wider py-3.5 px-6 rounded-2xl shadow-md shadow-blue-500/25 hover:shadow-lg transition duration-200">
                             Garantir Vaga no Fund. I <i class="fa-solid fa-arrow-right text-[10px]"></i>
                         </a>
                     </div>
                 </div>
 
                 <!-- CARD 3: ENSINO FUNDAMENTAL II -->
-                <div class="bg-[#fbfbfc] rounded-2xl p-6 border border-slate-200/80 shadow-subtle-card hover:shadow-editorial-hover transition duration-300 flex flex-col justify-between group">
+                <div class="bg-white rounded-3xl p-6 border border-slate-200/90 shadow-edulerns-card hover:shadow-edulerns-hover hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
                     <div class="space-y-5">
-                        <div class="relative rounded-xl overflow-hidden aspect-[16/10] bg-slate-100">
+                        <div class="relative rounded-2xl overflow-hidden aspect-[16/10] bg-slate-100 shadow-sm">
                             <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=800&q=80" 
-                                 alt="Estudante do Fundamental II em biblioteca" 
+                                 alt="Estudante do Fundamental II Anos Finais em preparação acadêmica" 
                                  class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            <span class="absolute top-3 left-3 bg-slate-900 text-white text-[10px] font-bold uppercase px-2.5 py-1 rounded tracking-wider">
+                            <span class="absolute top-3 left-3 bg-emerald-600 text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-full shadow-md tracking-wider">
                                 11 a 14 Anos
                             </span>
                         </div>
                         <div>
-                            <span class="text-[11px] font-semibold text-slate-600 uppercase tracking-wider block">6º ao 9º Ano • Anos Finais</span>
-                            <h3 class="font-heading font-bold text-xl text-brand-navy mt-1">Fundamental II</h3>
+                            <span class="text-[11px] font-bold text-emerald-600 uppercase tracking-wider block">6º ao 9º Ano • Anos Finais</span>
+                            <h3 class="font-heading font-bold text-2xl text-brand-navy mt-1">Fundamental II</h3>
                         </div>
                         <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
-                            Pensamento crítico, iniciação científica e preparação para desafios acadêmicos. Filosofia, espanhol, preparação para olimpíadas (OBA) e treinamento esportivo (JEPS).
+                            Pensamento crítico, preparação científica de alto rendimento e liderança. Filosofia, espanhol, preparação para olimpíadas (OBA) e treinamento esportivo (JEPS).
                         </p>
-                        <ul class="text-xs text-slate-500 space-y-2 pt-1 font-medium border-t border-slate-200/60">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-navy text-[11px]"></i> Projetos sociais com a comunidade</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-navy text-[11px]"></i> Basquete, natação e futsal</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-navy text-[11px]"></i> Orientação para olimpíadas científicas</li>
+                        <ul class="text-xs text-slate-500 space-y-2 pt-1 font-medium border-t border-slate-100">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Projetos cidadãos com a comunidade</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Basquete, futsal, natação e atletismo</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Foco e destaque em olimpíadas do conhecimento</li>
                         </ul>
                     </div>
                     <div class="pt-6">
-                        <a href="matricula.html" class="w-full inline-flex items-center justify-center gap-2 bg-brand-navy hover:bg-slate-900 text-white font-bold text-xs uppercase tracking-wider py-3.5 px-5 rounded-xl transition duration-200">
-                            Garantir Vaga no Fund. II <i class="fa-solid fa-arrow-right text-[10px] text-brand-accent"></i>
+                        <a href="matricula.html" class="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-700 hover:to-teal-800 text-white font-extrabold text-xs uppercase tracking-wider py-3.5 px-6 rounded-2xl shadow-md shadow-emerald-600/25 hover:shadow-lg transition duration-200">
+                            Garantir Vaga no Fund. II <i class="fa-solid fa-arrow-right text-[10px]"></i>
                         </a>
                     </div>
                 </div>
@@ -397,115 +473,117 @@
         </div>
     </section>
 
-    <!-- 7. CORPO DOCENTE (REDESENHO EDITORIAL COM CONSISTÊNCIA FOTOGRÁFICA RIGOROSA) -->
-    <section id="docentes" class="py-24 bg-[#f8f9fa] border-b border-slate-200/60">
+    <!-- ============================================================== -->
+    <!-- 7. CORPO DOCENTE — DIREÇÃO FOTOGRÁFICA RIGOROSA ("MEET THE TEACHER") -->
+    <!-- ============================================================== -->
+    <section id="docentes" class="py-24 bg-brand-sand border-b border-slate-200/70">
         <div class="max-w-7xl mx-auto px-4 sm:px-8">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
                 <div class="space-y-3">
-                    <span class="text-[11px] font-bold uppercase tracking-widest text-brand-royal bg-blue-50 px-3 py-1 rounded-md border border-blue-100">
-                        Corpo Docente de Referência
+                    <span class="text-[11px] font-bold uppercase tracking-widest text-brand-royal bg-blue-50 px-3.5 py-1.5 rounded-full border border-blue-100">
+                        Corpo Docente de Elite
                     </span>
                     <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-brand-navy">
-                        Educadores dedicados à formação humana e acadêmica
+                        Professores apaixonados por ensinar e acolher
                     </h2>
                     <p class="text-slate-600 text-sm max-w-xl">
-                        Profissionais graduados e especialistas, com formação continuada apoiada pela Consultoria Pedagógica da Rede Pitágoras.
+                        Uma equipe experiente, com sólida formação acadêmica e apoio constante da Consultoria Pedagógica da Rede Pitágoras.
                     </p>
                 </div>
                 <div>
                     <a href="matricula.html" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-navy hover:text-brand-royal transition">
-                        Agendar conversa com a Equipe <i class="fa-solid fa-arrow-right text-[10px] text-brand-accent"></i>
+                        Agendar conversa com a Coordenação <i class="fa-solid fa-arrow-right text-[10px] text-brand-accent"></i>
                     </a>
                 </div>
             </div>
 
-            <!-- GRADE COM FOTOGRAFIAS UNIFICADAS EM LUZ NATURAL, PROPORÇÃO E ENQUADRAMENTO -->
+            <!-- GRADE COM FOTOGRAFIAS UNIFICADAS EM LUZ NATURAL, ENQUADRAMENTO E POSTURA ACOLHEDORA -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
                 
                 <!-- PROFESSOR 1 -->
-                <div class="bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-subtle-card hover:shadow-editorial-hover transition duration-300 group flex flex-col">
-                    <div class="relative aspect-[3/4] overflow-hidden bg-slate-200">
+                <div class="bg-white rounded-3xl overflow-hidden border border-slate-200/80 shadow-edulerns-card hover:shadow-edulerns-hover transition duration-300 group flex flex-col">
+                    <div class="relative aspect-[3/4] overflow-hidden bg-slate-100">
                         <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=700&q=80" 
-                             alt="Retrato da Professora Cliciane Élen" 
-                             class="w-full h-full object-cover grayscale-[15%] group-hover:grayscale-0 group-hover:scale-105 transition duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-brand-midnight/70 via-transparent to-transparent"></div>
-                        <span class="absolute bottom-3 left-3 text-[10px] font-semibold text-white bg-black/40 backdrop-blur-md px-2 py-0.5 rounded">
-                            Gestão Pedagógica
+                             alt="Profa. Cliciane Élen — Diretora Pedagógica" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-midnight/70 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition"></div>
+                        <span class="absolute bottom-3.5 left-3.5 text-[10px] font-bold text-white bg-brand-navy/80 backdrop-blur-md px-2.5 py-1 rounded-md">
+                            Coordenação Geral
                         </span>
                     </div>
-                    <div class="p-5 space-y-1.5 flex-1 flex flex-col justify-between">
+                    <div class="p-6 space-y-2 flex-1 flex flex-col justify-between">
                         <div>
-                            <h4 class="font-heading font-bold text-base text-brand-navy">Profa. Cliciane Élen</h4>
-                            <span class="text-[11px] font-semibold text-brand-royal block">Diretora Pedagógica & Especialista</span>
+                            <h4 class="font-heading font-bold text-lg text-brand-navy">Profa. Cliciane Élen</h4>
+                            <span class="text-xs font-semibold text-brand-royal block">Diretora Pedagógica & Especialista</span>
                         </div>
-                        <p class="text-[11px] text-slate-500 leading-relaxed pt-2 border-t border-slate-100">
-                            Mais de 20 anos dedicados à gestão sociointeracionista e coordenação curricular no Sertão.
+                        <p class="text-xs text-slate-500 leading-relaxed pt-2 border-t border-slate-100">
+                            Mais de 20 anos dedicados à gestão sociointeracionista e excelência curricular no Sertão.
                         </p>
                     </div>
                 </div>
 
                 <!-- PROFESSOR 2 -->
-                <div class="bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-subtle-card hover:shadow-editorial-hover transition duration-300 group flex flex-col">
-                    <div class="relative aspect-[3/4] overflow-hidden bg-slate-200">
+                <div class="bg-white rounded-3xl overflow-hidden border border-slate-200/80 shadow-edulerns-card hover:shadow-edulerns-hover transition duration-300 group flex flex-col">
+                    <div class="relative aspect-[3/4] overflow-hidden bg-slate-100">
                         <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=700&q=80" 
-                             alt="Retrato do Professor Marcos Vinícius" 
-                             class="w-full h-full object-cover grayscale-[15%] group-hover:grayscale-0 group-hover:scale-105 transition duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-brand-midnight/70 via-transparent to-transparent"></div>
-                        <span class="absolute bottom-3 left-3 text-[10px] font-semibold text-white bg-black/40 backdrop-blur-md px-2 py-0.5 rounded">
-                            Ciências & Inovação
+                             alt="Prof. Marcos Vinícius — Ciências e Robótica" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-midnight/70 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition"></div>
+                        <span class="absolute bottom-3.5 left-3.5 text-[10px] font-bold text-white bg-brand-navy/80 backdrop-blur-md px-2.5 py-1 rounded-md">
+                            Ciências & Robótica
                         </span>
                     </div>
-                    <div class="p-5 space-y-1.5 flex-1 flex flex-col justify-between">
+                    <div class="p-6 space-y-2 flex-1 flex flex-col justify-between">
                         <div>
-                            <h4 class="font-heading font-bold text-base text-brand-navy">Prof. Marcos Vinícius</h4>
-                            <span class="text-[11px] font-semibold text-brand-royal block">Líder do Laboratório Maker</span>
+                            <h4 class="font-heading font-bold text-lg text-brand-navy">Prof. Marcos Vinícius</h4>
+                            <span class="text-xs font-semibold text-brand-royal block">Líder do Laboratório Maker</span>
                         </div>
-                        <p class="text-[11px] text-slate-500 leading-relaxed pt-2 border-t border-slate-100">
+                        <p class="text-xs text-slate-500 leading-relaxed pt-2 border-t border-slate-100">
                             Técnico orientador dos projetos de Robótica e equipes medalhistas das Olimpíadas OBA.
                         </p>
                     </div>
                 </div>
 
-                <!-- PROFESSOR 3 (SUBSTITUIÇÃO COM ILUMINAÇÃO E TRATAMENTO CONDIGENTES) -->
-                <div class="bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-subtle-card hover:shadow-editorial-hover transition duration-300 group flex flex-col">
-                    <div class="relative aspect-[3/4] overflow-hidden bg-slate-200">
+                <!-- PROFESSOR 3 (FOTOGRAFIA ACOLHEDORA E VALORIZADA) -->
+                <div class="bg-white rounded-3xl overflow-hidden border border-slate-200/80 shadow-edulerns-card hover:shadow-edulerns-hover transition duration-300 group flex flex-col">
+                    <div class="relative aspect-[3/4] overflow-hidden bg-slate-100">
                         <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=700&q=80" 
-                             alt="Retrato da Professora Juliana Pires" 
-                             class="w-full h-full object-cover grayscale-[15%] group-hover:grayscale-0 group-hover:scale-105 transition duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-brand-midnight/70 via-transparent to-transparent"></div>
-                        <span class="absolute bottom-3 left-3 text-[10px] font-semibold text-white bg-black/40 backdrop-blur-md px-2 py-0.5 rounded">
+                             alt="Profa. Juliana Pires — Educação Infantil" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-midnight/70 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition"></div>
+                        <span class="absolute bottom-3.5 left-3.5 text-[10px] font-bold text-white bg-brand-navy/80 backdrop-blur-md px-2.5 py-1 rounded-md">
                             Educação Infantil
                         </span>
                     </div>
-                    <div class="p-5 space-y-1.5 flex-1 flex flex-col justify-between">
+                    <div class="p-6 space-y-2 flex-1 flex flex-col justify-between">
                         <div>
-                            <h4 class="font-heading font-bold text-base text-brand-navy">Profa. Juliana Pires</h4>
-                            <span class="text-[11px] font-semibold text-brand-royal block">Pedagoga & Psicomotricista</span>
+                            <h4 class="font-heading font-bold text-lg text-brand-navy">Profa. Juliana Pires</h4>
+                            <span class="text-xs font-semibold text-brand-royal block">Pedagoga & Psicomotricista</span>
                         </div>
-                        <p class="text-[11px] text-slate-500 leading-relaxed pt-2 border-t border-slate-100">
-                            Especialista no desenvolvimento da primeira infância, acolhimento afetivo e letramento inicial.
+                        <p class="text-xs text-slate-500 leading-relaxed pt-2 border-t border-slate-100">
+                            Especialista em desenvolvimento da primeira infância, acolhimento afetivo e letramento lúdico.
                         </p>
                     </div>
                 </div>
 
                 <!-- PROFESSOR 4 -->
-                <div class="bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-subtle-card hover:shadow-editorial-hover transition duration-300 group flex flex-col">
-                    <div class="relative aspect-[3/4] overflow-hidden bg-slate-200">
+                <div class="bg-white rounded-3xl overflow-hidden border border-slate-200/80 shadow-edulerns-card hover:shadow-edulerns-hover transition duration-300 group flex flex-col">
+                    <div class="relative aspect-[3/4] overflow-hidden bg-slate-100">
                         <img src="https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?auto=format&fit=crop&w=700&q=80" 
-                             alt="Retrato da Professora Renata Lima" 
-                             class="w-full h-full object-cover grayscale-[15%] group-hover:grayscale-0 group-hover:scale-105 transition duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-brand-midnight/70 via-transparent to-transparent"></div>
-                        <span class="absolute bottom-3 left-3 text-[10px] font-semibold text-white bg-black/40 backdrop-blur-md px-2 py-0.5 rounded">
+                             alt="Teacher Renata Lima — Línguas Estrangeiras" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-midnight/70 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition"></div>
+                        <span class="absolute bottom-3.5 left-3.5 text-[10px] font-bold text-white bg-brand-navy/80 backdrop-blur-md px-2.5 py-1 rounded-md">
                             Línguas Estrangeiras
                         </span>
                     </div>
-                    <div class="p-5 space-y-1.5 flex-1 flex flex-col justify-between">
+                    <div class="p-6 space-y-2 flex-1 flex flex-col justify-between">
                         <div>
-                            <h4 class="font-heading font-bold text-base text-brand-navy">Teacher Renata Lima</h4>
-                            <span class="text-[11px] font-semibold text-brand-royal block">Prática Bilíngue Aplicada</span>
+                            <h4 class="font-heading font-bold text-lg text-brand-navy">Teacher Renata Lima</h4>
+                            <span class="text-xs font-semibold text-brand-royal block">Prática Bilíngue Aplicada</span>
                         </div>
-                        <p class="text-[11px] text-slate-500 leading-relaxed pt-2 border-t border-slate-100">
-                            Metodologias ativas de imersão no vocabulário e conversação prática em inglês.
+                        <p class="text-xs text-slate-500 leading-relaxed pt-2 border-t border-slate-100">
+                            Imersão natural e ativa no vocabulário global preparando alunos para os desafios do futuro.
                         </p>
                     </div>
                 </div>
@@ -514,24 +592,26 @@
         </div>
     </section>
 
-    <!-- 8. NOTÍCIAS E CONQUISTAS (APRESENTAÇÃO EDITORIAL DE REVISTA) -->
-    <section id="noticias" class="py-24 bg-white border-b border-slate-200/60">
+    <!-- ============================================================== -->
+    <!-- 8. NOTÍCIAS E CONQUISTAS — QUALIDADE DE PORTAL EDITORIAL PREMIUM -->
+    <!-- ============================================================== -->
+    <section id="noticias" class="py-24 bg-white border-b border-slate-200/70">
         <div class="max-w-7xl mx-auto px-4 sm:px-8">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
                 <div class="space-y-3">
-                    <span class="text-[11px] font-bold uppercase tracking-widest text-brand-accent bg-amber-50 px-3 py-1 rounded-md border border-amber-200">
-                        Vida Escolar & Atualidades
+                    <span class="text-[11px] font-bold uppercase tracking-widest text-brand-accent bg-amber-50 px-3.5 py-1.5 rounded-full border border-amber-200">
+                        Vida Escolar & Conquistas
                     </span>
                     <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-brand-navy">
-                        Acontecimentos e Conquistas
+                        O que está acontecendo no Colégio
                     </h2>
                     <p class="text-slate-600 text-sm max-w-xl">
-                        Acompanhe as atividades, premiações e projetos da comunidade do Colégio Dom Hélder.
+                        Acompanhe projetos, eventos culturais e resultados das competições científicas e esportivas.
                     </p>
                 </div>
-                <!-- BOTÃO ADMINISTRATIVO DISCRETO E NÃO-COMPETITIVO -->
+                <!-- BOTÃO ADMINISTRATIVO DISCRETO E INTEGRADO (NÃO COMPETITIVO) -->
                 <div>
-                    <a href="admin.html" class="inline-flex items-center gap-1.5 text-xs text-slate-500 hover:text-brand-navy border border-slate-200 px-3 py-1.5 rounded-lg transition font-medium">
+                    <a href="admin.html" class="inline-flex items-center gap-2 text-xs font-semibold text-slate-500 hover:text-brand-navy border border-slate-200 px-4 py-2 rounded-xl transition duration-200">
                         <i class="fa-solid fa-pen-to-square text-[11px] text-slate-400"></i>
                         Acesso Secretaria (Postar Matéria)
                     </a>
@@ -545,62 +625,57 @@
         </div>
     </section>
 
-    <!-- 9. CALENDÁRIO & AGENDAMENTO (EQUILÍBRIO ENTRE AS DUAS COLUNAS) -->
-    <section id="eventos" class="py-24 bg-[#f8f9fa] border-b border-slate-200/60">
+    <!-- ============================================================== -->
+    <!-- 9. CALENDÁRIO & AGENDAMENTO — HARMONIA E PRECISÃO DE DUAS COLUNAS -->
+    <!-- ============================================================== -->
+    <section id="eventos" class="py-24 bg-brand-sand border-b border-slate-200/70">
         <div class="max-w-7xl mx-auto px-4 sm:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
                 
-                <!-- COLUNA ESQUERDA: AGENDA DE DATAS COM TIPOGRAFIA ESCULPIDA -->
+                <!-- COLUNA ESQUERDA: CALENDÁRIO COM DATAS EM DESTAQUE (EDUMA LEGACY STYLE) -->
                 <div class="lg:col-span-7 space-y-6">
-                    <span class="text-[11px] font-bold uppercase tracking-widest text-brand-royal bg-blue-50 px-3 py-1 rounded-md border border-blue-100">
-                        Agenda Oficial
+                    <span class="text-[11px] font-bold uppercase tracking-widest text-brand-royal bg-blue-50 px-3.5 py-1.5 rounded-full border border-blue-100">
+                        Próximas Atividades
                     </span>
                     <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-brand-navy">
-                        Próximas Atividades & Eventos
+                        Calendário Oficial & Eventos
                     </h2>
                     <p class="text-slate-600 text-sm leading-relaxed">
-                        Reuniões pedagógicas, apresentações culturais e calendário esportivo. Os responsáveis recebem confirmação de leitura diretamente no aplicativo.
+                        Acompanhe as datas de simulados, festivais esportivos e mostras culturais. Os pais recebem alertas push automáticos pelo aplicativo.
                     </p>
 
                     <!-- LISTA DE EVENTOS COM TIPOGRAFIA REFINADA -->
-                    <div id="events-list-container" class="space-y-3.5 pt-2">
+                    <div id="events-list-container" class="space-y-4 pt-2">
                         <!-- Inserido dinamicamente pelo store.js -->
                     </div>
                 </div>
 
-                <!-- COLUNA DIREITA: FORMULÁRIO DE VISITA COM ESTÉTICA INSTITUCIONAL -->
+                <!-- COLUNA DIREITA: FORMULÁRIO DE VISITA COM DESIGN INSTITUCIONAL DE PRESTÍGIO -->
                 <div class="lg:col-span-5">
-                    <div class="bg-white rounded-2xl p-7 sm:p-9 border border-slate-200/90 shadow-subtle-card space-y-6">
-                        <div class="space-y-1.5 border-b border-slate-100 pb-4">
-                            <span class="text-[10px] font-bold uppercase tracking-wider text-brand-accent">
-                                Agendamento Presencial
+                    <div class="bg-gradient-to-br from-brand-navy to-[#0a182f] text-white rounded-3xl p-8 sm:p-10 shadow-2xl relative overflow-hidden border border-white/10">
+                        <div class="relative z-10 space-y-5">
+                            <span class="bg-brand-accent text-brand-midnight text-[10px] font-extrabold uppercase px-3 py-1 rounded-full">
+                                Venha nos Conhecer
                             </span>
-                            <h3 class="font-heading font-bold text-xl sm:text-2xl text-brand-navy">
-                                Conheça nossas instalações
+                            <h3 class="font-heading font-bold text-2xl sm:text-3xl text-white">
+                                Agende uma visita guiada com nossa equipe
                             </h3>
-                            <p class="text-xs text-slate-500 leading-relaxed">
-                                Agende um momento para visitar a sala de leitura, piscinas e conversar com a equipe pedagógica.
+                            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                                Traga seu filho para conhecer a quadra poliesportiva, as piscinas, a sala de leitura e conversar pessoalmente com os professores.
+                            </p>
+                            
+                            <form id="quick-visit-form" onsubmit="event.preventDefault(); alert('Solicitação de visita enviada com sucesso! A secretaria do Colégio Dom Hélder entrará em contato via WhatsApp.');" class="space-y-3.5 pt-2">
+                                <input type="text" placeholder="Seu nome completo" required class="w-full px-4 py-3.5 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-brand-accent transition">
+                                <input type="tel" placeholder="WhatsApp (DDD + Número)" required class="w-full px-4 py-3.5 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-brand-accent transition">
+                                <button type="submit" class="w-full bg-gradient-to-r from-brand-accent to-amber-600 hover:from-amber-600 hover:to-brand-accent text-brand-midnight font-extrabold py-3.5 rounded-xl transition duration-200 shadow-lg shadow-amber-500/20 text-sm uppercase tracking-wider">
+                                    Solicitar Horário de Visita
+                                </button>
+                            </form>
+
+                            <p class="text-[11px] text-slate-400 text-center">
+                                Secretaria aberta de segunda a sexta, das 07:30 às 17:30.
                             </p>
                         </div>
-                        
-                        <form id="quick-visit-form" onsubmit="event.preventDefault(); alert('Solicitação de visita registrada com sucesso! A secretaria do Colégio Dom Hélder entrará em contato via WhatsApp.');" class="space-y-4">
-                            <div class="space-y-1">
-                                <label class="text-[11px] font-semibold text-slate-700">Nome completo do responsável</label>
-                                <input type="text" placeholder="Ex: Roberto Carlos da Silva" required class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-royal transition">
-                            </div>
-                            <div class="space-y-1">
-                                <label class="text-[11px] font-semibold text-slate-700">WhatsApp para contato</label>
-                                <input type="tel" placeholder="(87) 99999-0000" required class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-royal transition">
-                            </div>
-                            <button type="submit" class="w-full bg-brand-navy hover:bg-slate-900 text-white font-bold text-xs uppercase tracking-wider py-3.5 rounded-xl transition duration-200 shadow-sm flex items-center justify-center gap-2">
-                                <span>Solicitar Horário de Visita</span>
-                                <i class="fa-solid fa-arrow-right text-[10px] text-brand-accent"></i>
-                            </button>
-                        </form>
-
-                        <p class="text-[10px] text-slate-400 text-center">
-                            Atendimento de segunda a sexta, das 07:30 às 17:30.
-                        </p>
                     </div>
                 </div>
 
@@ -608,32 +683,34 @@
         </div>
     </section>
 
-    <!-- 10. TRANSIÇÃO E CHAMADA FINAL (RESOLUÇÃO DO PROBLEMA F — TRANSIÇÃO LUMINOSA E REFINADA) -->
+    <!-- ============================================================== -->
+    <!-- 10. TRANSIÇÃO E CHAMADA COMERCIAL (ILHA LUMINOSA DE ALTO IMPACTO) -->
+    <!-- ============================================================== -->
     <section class="py-20 bg-white relative">
         <div class="max-w-6xl mx-auto px-4 sm:px-8">
-            <div class="bg-gradient-to-br from-[#0c1b33] via-brand-navy to-[#081426] text-white rounded-3xl p-8 sm:p-14 text-center shadow-editorial relative overflow-hidden border border-white/10">
+            <div class="bg-gradient-to-br from-[#0c1b33] via-brand-navy to-[#071224] text-white rounded-3xl p-8 sm:p-14 text-center shadow-2xl relative overflow-hidden border border-white/15">
                 
                 <div class="relative z-10 space-y-6 max-w-3xl mx-auto">
-                    <span class="inline-block bg-white/[0.08] border border-white/[0.14] text-amber-300 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
-                        Ano Letivo 2026/2027
+                    <span class="inline-block bg-white/[0.08] border border-white/20 text-amber-300 text-xs font-extrabold px-4 py-1.5 rounded-full uppercase tracking-wider">
+                        Vagas Limitadas para 2026/2027
                     </span>
                     
-                    <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-white tracking-tight leading-snug">
-                        Garanta a vaga do seu filho na instituição que é referência de ensino em Afogados da Ingazeira.
+                    <h2 class="font-heading font-extrabold text-3xl sm:text-5xl text-white tracking-tight leading-tight">
+                        Garanta o futuro do seu filho com a melhor formação<br class="hidden sm:inline"> <span class="whitespace-nowrap">de Afogados da Ingazeira.</span>
                     </h2>
                     
-                    <p class="text-slate-300 text-sm max-w-xl mx-auto font-light leading-relaxed">
-                        Faça a reserva da vaga agora mesmo através do portal digital, com confirmação imediata e processamento seguro via Asaas.
+                    <p class="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto font-light leading-relaxed">
+                        Faça a pré-matrícula online agora mesmo. Pague a taxa de reserva com segurança via <strong>Pix Asaas</strong> com confirmação imediata.
                     </p>
 
                     <div class="pt-3 flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <a href="matricula.html" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-brand-accent hover:bg-amber-600 text-brand-midnight font-extrabold text-sm px-8 py-3.5 rounded-xl shadow-lg transition duration-200">
-                            Iniciar Pré-Matrícula Online (Asaas)
-                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        <a href="matricula.html" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-brand-accent to-amber-600 hover:from-amber-600 hover:to-brand-accent text-brand-midnight font-extrabold text-base px-9 py-4 rounded-xl shadow-xl shadow-amber-500/30 hover:scale-105 transition duration-200">
+                            <i class="fa-solid fa-lock"></i>
+                            Fazer Pré-Matrícula Online (Asaas)
                         </a>
-                        <a href="portal.html" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 text-white font-semibold text-sm px-6 py-3.5 rounded-xl transition duration-200">
+                        <a href="portal.html" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold text-sm px-7 py-4 rounded-xl transition duration-200">
                             <i class="fa-solid fa-user-graduate text-xs text-amber-300"></i>
-                            Acesso à Área da Família
+                            Área do Aluno & Família
                         </a>
                     </div>
                 </div>
@@ -642,111 +719,115 @@
         </div>
     </section>
 
-    <!-- 11. RODAPÉ INSTITUCIONAL (LEGIBILIDADE, TIPOGRAFIA E CONTRASTE REFINADOS) -->
+    <!-- ============================================================== -->
+    <!-- 11. RODAPÉ INSTITUCIONAL DE EXCELÊNCIA -->
+    <!-- ============================================================== -->
     <footer class="bg-brand-midnight text-slate-400 text-xs pt-16 pb-12 border-t border-white/[0.08]">
         <div class="max-w-7xl mx-auto px-4 sm:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
             
             <!-- COLUNA 1: IDENTIDADE INSTITUCIONAL -->
             <div class="space-y-4">
                 <div class="flex items-center gap-3">
-                    <div class="w-9 h-9 rounded-xl bg-brand-navy border border-white/15 text-white flex items-center justify-center font-bold text-sm">
+                    <div class="w-10 h-10 rounded-xl bg-brand-royal text-white flex items-center justify-center font-extrabold text-base border border-white/10 shadow-md">
                         CDH
                     </div>
-                    <span class="font-heading font-bold text-base text-white">Colégio Dom Hélder</span>
+                    <span class="font-heading font-bold text-lg text-white">Colégio Dom Hélder</span>
                 </div>
-                <p class="text-[11px] text-slate-400 leading-relaxed">
-                    Mais de duas décadas dedicadas à educação sociointeracionista, alicerçada em valores éticos, acolhimento humano e rigor pedagógico em Afogados da Ingazeira/PE.
+                <p class="text-xs text-slate-400 leading-relaxed">
+                    Há mais de 26 anos construindo um ensino humanizado e sociointeracionista em Afogados da Ingazeira. Porque educar é um ato de amor!
                 </p>
-                <div class="flex items-center gap-2.5 pt-1">
+                <div class="flex items-center gap-3 pt-1">
                     <a href="https://instagram.com/colegiodhelder" target="_blank" class="w-8 h-8 rounded-lg bg-white/[0.05] hover:bg-brand-royal text-slate-300 hover:text-white flex items-center justify-center transition">
-                        <i class="fa-brands fa-instagram text-xs"></i>
+                        <i class="fa-brands fa-instagram text-sm"></i>
                     </a>
                     <a href="https://facebook.com/colegidhelder" target="_blank" class="w-8 h-8 rounded-lg bg-white/[0.05] hover:bg-brand-royal text-slate-300 hover:text-white flex items-center justify-center transition">
-                        <i class="fa-brands fa-facebook text-xs"></i>
+                        <i class="fa-brands fa-facebook text-sm"></i>
                     </a>
                     <a href="https://wa.me/5587996630300" target="_blank" class="w-8 h-8 rounded-lg bg-white/[0.05] hover:bg-emerald-600 text-slate-300 hover:text-white flex items-center justify-center transition">
-                        <i class="fa-brands fa-whatsapp text-xs"></i>
+                        <i class="fa-brands fa-whatsapp text-sm"></i>
                     </a>
                 </div>
             </div>
 
-            <!-- COLUNA 2: NAVEGAÇÃO -->
+            <!-- COLUNA 2: NAVEGAÇÃO RÁPIDA -->
             <div class="space-y-3">
                 <h4 class="font-heading font-bold text-white text-xs uppercase tracking-wider">Acesso Rápido</h4>
-                <ul class="space-y-2 text-[11px]">
-                    <li><a href="matricula.html" class="hover:text-amber-300 transition">Matrícula & Reserva Online</a></li>
-                    <li><a href="portal.html" class="hover:text-amber-300 transition">Portal do Aluno & Família</a></li>
-                    <li><a href="admin.html" class="hover:text-amber-300 transition">Painel da Secretaria</a></li>
-                    <li><a href="#proposta" class="hover:text-amber-300 transition">Proposta Pedagógica</a></li>
-                    <li><a href="#segmentos" class="hover:text-amber-300 transition">Educação Infantil & Fundamental</a></li>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="matricula.html" class="hover:text-amber-400 transition">Matrículas Online 2026</a></li>
+                    <li><a href="portal.html" class="hover:text-amber-400 transition">Área do Aluno / Família</a></li>
+                    <li><a href="admin.html" class="hover:text-amber-400 transition">Painel da Secretaria</a></li>
+                    <li><a href="#proposta" class="hover:text-amber-400 transition">Proposta Pedagógica</a></li>
+                    <li><a href="#segmentos" class="hover:text-amber-400 transition">Educação Infantil & Fundamental</a></li>
                 </ul>
             </div>
 
-            <!-- COLUNA 3: SISTEMAS & METODOLOGIA -->
+            <!-- COLUNA 3: SISTEMAS & PARCERIAS -->
             <div class="space-y-3">
-                <h4 class="font-heading font-bold text-white text-xs uppercase tracking-wider">Parcerias Acadêmicas</h4>
-                <ul class="space-y-2 text-[11px] text-slate-400">
-                    <li class="flex items-center gap-2"><i class="fa-solid fa-award text-brand-accent/80"></i> Rede Pitágoras de Ensino</li>
-                    <li class="flex items-center gap-2"><i class="fa-solid fa-award text-brand-accent/80"></i> Editora Opet</li>
-                    <li class="flex items-center gap-2"><i class="fa-solid fa-award text-brand-accent/80"></i> Prática Bilíngue Aplicada</li>
-                    <li class="fa-solid fa-award text-brand-accent/80 inline mr-2"></i>Urânia Planetária & OBA</li>
-                    <li class="flex items-center gap-2"><i class="fa-solid fa-award text-brand-accent/80"></i> Jogos Escolares de PE (JEPS)</li>
+                <h4 class="font-heading font-bold text-white text-xs uppercase tracking-wider">Metodologia & Parceiros</h4>
+                <ul class="space-y-2 text-xs text-slate-400">
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-award text-brand-accent"></i> Rede Pitágoras de Ensino</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-award text-brand-accent"></i> Editora Opet</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-award text-brand-accent"></i> Prática Bilíngue Aplicada</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-award text-brand-accent"></i> Urânia Planetária & OBA</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-award text-brand-accent"></i> Jogos Escolares de PE (JEPS)</li>
                 </ul>
             </div>
 
-            <!-- COLUNA 4: ATENDIMENTO -->
+            <!-- COLUNA 4: ATENDIMENTO & LOCALIZAÇÃO -->
             <div class="space-y-3">
                 <h4 class="font-heading font-bold text-white text-xs uppercase tracking-wider">Secretaria Escolar</h4>
-                <p class="text-[11px] text-slate-400 leading-relaxed">
+                <p class="text-xs text-slate-400 leading-relaxed">
                     <i class="fa-solid fa-location-dot text-brand-accent mr-1.5"></i>
-                    Av. José Pereira de Souza, 275 • Manoela Valadares, Afogados da Ingazeira/PE
+                    Av. José Pereira de Souza, 275 • Manoela Valadares, Afogados da Ingazeira - PE
                 </p>
-                <p class="text-[11px] text-slate-400">
+                <p class="text-xs text-slate-400">
                     <i class="fa-regular fa-clock text-slate-500 mr-1.5"></i>
                     Segunda a Sexta: 07:30 às 17:30
                 </p>
-                <p class="text-[11px] text-slate-400">
+                <p class="text-xs text-slate-400">
                     <i class="fa-solid fa-envelope text-slate-500 mr-1.5"></i>
                     colegiodhelder@gmail.com
                 </p>
                 <div class="pt-2">
-                    <span class="inline-block bg-white/[0.05] text-[10px] text-slate-400 px-2.5 py-1 rounded border border-white/[0.08]">
-                        Plataforma Oficial "O Seu Colégio"
+                    <span class="inline-block bg-white/[0.05] text-[10px] text-slate-400 px-3 py-1 rounded border border-white/10">
+                        Tecnologia: Plataforma "O Seu Colégio"
                     </span>
                 </div>
             </div>
 
         </div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-8 pt-8 border-t border-white/[0.06] text-center text-[11px] text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 pt-8 border-t border-white/[0.06] text-center text-xs text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-4">
             <p>© 2026 Colégio Dom Hélder. Todos os direitos reservados. CNPJ: Afogados da Ingazeira/PE.</p>
-            <p>Projeto concebido e desenvolvido sob medida para a demonstração comercial da plataforma <strong>"O Seu Colégio"</strong>.</p>
+            <p>Desenvolvido para a demonstração comercial da plataforma <strong>"O Seu Colégio"</strong>.</p>
         </div>
     </footer>
 
-    <!-- CARREGAMENTO DE DADOS E SCRIPTS COM PRESERVAÇÃO TOTAL DAS REGRAS DE NEGÓCIO -->
+    <!-- ============================================================== -->
+    <!-- 12. DADOS E SCRIPTS (PRESERVAÇÃO INTEGRAL DE FUNCIONALIDADES) -->
+    <!-- ============================================================== -->
     <script src="js/store.js"></script>
     <script>
-        // Renderizar Notícias Dinâmicas com layout editorial contemporâneo
+        // Renderizar Notícias Dinâmicas com layout de revista Edulerns
         function renderNews() {
             const container = document.getElementById('news-grid-container');
             const newsList = SchoolStore.getNews();
             
             container.innerHTML = newsList.map(item => `
-                <article class="bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-subtle-card hover:shadow-editorial-hover transition duration-300 flex flex-col justify-between group">
+                <article class="bg-white rounded-3xl overflow-hidden border border-slate-200/90 shadow-edulerns-card hover:shadow-edulerns-hover hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
                     <div>
                         <div class="relative aspect-[16/10] overflow-hidden bg-slate-100">
                             <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            <span class="absolute top-3 left-3 bg-brand-navy/90 backdrop-blur-sm text-white text-[10px] font-bold uppercase px-2.5 py-1 rounded tracking-wider">
+                            <span class="absolute top-3.5 left-3.5 bg-brand-navy/90 backdrop-blur-sm text-white text-[10px] font-bold uppercase px-3 py-1 rounded-full shadow-sm tracking-wider">
                                 ${item.category}
                             </span>
                         </div>
-                        <div class="p-5 space-y-2.5">
-                            <div class="flex items-center justify-between text-[11px] text-slate-400">
+                        <div class="p-6 space-y-3">
+                            <div class="flex items-center justify-between text-xs text-slate-400">
                                 <span><i class="fa-regular fa-calendar mr-1"></i> ${item.date}</span>
                                 <span><i class="fa-regular fa-user mr-1"></i> ${item.author || 'CDH'}</span>
                             </div>
-                            <h3 class="font-heading font-bold text-base text-brand-navy group-hover:text-brand-royal transition leading-snug">
+                            <h3 class="font-heading font-bold text-lg text-brand-navy group-hover:text-brand-royal transition leading-snug">
                                 ${item.title}
                             </h3>
                             <p class="text-slate-600 text-xs leading-relaxed line-clamp-3">
@@ -754,8 +835,8 @@
                             </p>
                         </div>
                     </div>
-                    <div class="p-5 pt-0">
-                        <button onclick="openNewsModal('${item.id}')" class="text-brand-navy hover:text-brand-royal font-bold text-xs flex items-center gap-1.5 transition">
+                    <div class="p-6 pt-0">
+                        <button onclick="openNewsModal('${item.id}')" class="text-brand-navy hover:text-brand-royal font-bold text-xs flex items-center gap-1.5 group-hover:gap-2.5 transition duration-200">
                             Ler matéria completa <i class="fa-solid fa-arrow-right text-[10px] text-brand-accent"></i>
                         </button>
                     </div>
@@ -763,22 +844,22 @@
             `).join('');
         }
 
-        // Renderizar Eventos com tipografia limpa
+        // Renderizar Eventos com bloco de data Eduma/Edulerns Style
         function renderEvents() {
             const container = document.getElementById('events-list-container');
             const events = SchoolStore.getEvents();
             
             container.innerHTML = events.map(ev => `
-                <div class="bg-white p-4 sm:p-5 rounded-2xl border border-slate-200/80 shadow-subtle-card hover:border-slate-300 transition flex items-center gap-4 sm:gap-5">
-                    <div class="w-14 h-14 rounded-xl bg-brand-navy text-white flex flex-col items-center justify-center shrink-0 border border-white/10">
-                        <span class="font-heading font-extrabold text-xl leading-none text-white">${ev.day}</span>
-                        <span class="text-[9px] font-bold uppercase tracking-wider text-brand-accent mt-0.5">${ev.month}</span>
+                <div class="bg-white p-5 rounded-2xl border border-slate-200/90 shadow-sm hover:border-brand-royal transition duration-200 flex items-center gap-5">
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-navy to-brand-royal text-white flex flex-col items-center justify-center shrink-0 shadow-md shadow-blue-950/20 border border-white/10">
+                        <span class="font-heading font-extrabold text-2xl leading-none text-white">${ev.day}</span>
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-brand-accent mt-0.5">${ev.month}</span>
                     </div>
-                    <div class="space-y-0.5">
-                        <span class="text-[9px] font-bold uppercase tracking-wider text-slate-500 bg-slate-100 px-2 py-0.5 rounded">
+                    <div class="space-y-1">
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-brand-royal bg-blue-50 px-2 py-0.5 rounded font-semibold">
                             ${ev.category}
                         </span>
-                        <h4 class="font-heading font-bold text-sm sm:text-base text-brand-navy">${ev.title}</h4>
+                        <h4 class="font-heading font-bold text-base text-brand-navy">${ev.title}</h4>
                         <div class="flex flex-wrap items-center gap-4 text-xs text-slate-500">
                             <span><i class="fa-regular fa-clock mr-1 text-slate-400"></i> ${ev.time}</span>
                             <span><i class="fa-solid fa-location-dot mr-1 text-slate-400"></i> ${ev.location}</span>
@@ -795,26 +876,26 @@
 
             const modalHtml = `
                 <div id="news-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/70 backdrop-blur-sm animate-fade-in">
-                    <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 shadow-2xl relative border border-slate-200">
-                        <button onclick="document.getElementById('news-modal').remove()" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center transition">
-                            <i class="fa-solid fa-xmark text-sm"></i>
+                    <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 shadow-2xl relative border border-slate-200">
+                        <button onclick="document.getElementById('news-modal').remove()" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center transition">
+                            <i class="fa-solid fa-xmark"></i>
                         </button>
-                        <div class="aspect-[16/9] rounded-xl overflow-hidden mb-6 bg-slate-100">
+                        <div class="aspect-[16/9] rounded-2xl overflow-hidden mb-6 bg-slate-100">
                             <img src="${item.image}" class="w-full h-full object-cover">
                         </div>
-                        <span class="bg-brand-navy text-white text-xs font-bold px-3 py-1 rounded">
+                        <span class="bg-brand-navy text-white text-xs font-bold px-3 py-1 rounded-full">
                             ${item.category}
                         </span>
                         <h2 class="font-heading font-extrabold text-2xl sm:text-3xl text-brand-navy mt-3 mb-2 leading-tight">
                             ${item.title}
                         </h2>
-                        <div class="flex items-center gap-4 text-xs text-slate-400 mb-6 border-b border-slate-100 pb-3">
+                        <div class="flex items-center gap-4 text-xs text-slate-400 mb-6 border-b border-slate-100 pb-4">
                             <span><i class="fa-regular fa-calendar mr-1"></i> ${item.date}</span>
                             <span><i class="fa-regular fa-user mr-1"></i> ${item.author}</span>
-                            <span><i class="fa-regular fa-eye mr-1"></i> ${item.views} leituras</span>
+                            <span><i class="fa-regular fa-eye mr-1"></i> ${item.views} visualizações</span>
                         </div>
-                        <div class="text-slate-700 text-sm leading-relaxed space-y-4 font-light">
-                            <p class="font-medium text-slate-900 text-base leading-snug">${item.summary}</p>
+                        <div class="text-slate-700 text-sm leading-relaxed space-y-4 font-normal">
+                            <p class="font-medium text-slate-900 text-base">${item.summary}</p>
                             <p>${item.content}</p>
                         </div>
                     </div>
